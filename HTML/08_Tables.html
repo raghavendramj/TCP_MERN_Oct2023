@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Table Demo</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      tr,
+      th,
+      td {
+        padding: 10px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Table Demo</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Sl.No</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Numner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Sachin</td>
+          <td>sachin@gmail.com</td>
+          <td rowspan="2">7545562481</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Ganguly</td>
+          <td>ganguly@gmail.com</td>
+          <!-- <td>5623458785</td> -->
+        </tr>
+        <tr>
+          <td>3</td>
+          <td colspan="2">GilChrist</td>
+          <!-- <td>gilChrist@gmail.com</td> -->
+          <td>7856485926</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Text Transformation - 02</title>
+    <style>
+      div {
+        border: medium solid red;
+        border-radius: 4px;
+        margin: 10px;
+        padding: 10px;
+        font-size: 20px;
+      }
+      span {
+        color: blue;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      #normal {
+        width: 200px;
+        padding: 5px;
+        border: thin solid green;
+        white-space: normal;
+      }
+      #nowrap {
+        width: 200px;
+        padding: 5px;
+        border: thin solid green;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Text Transformation - Part-02</h1>
+    <div>
+      <span>white-space: normal [default]</span>
+      <p id="normal">Kohli's homecoming party turns into Rohit extravaganza</p>
+    </div>
+    <div>
+      <span>white-space: nowrap</span>
+      <p id="nowrap">Kohli's homecoming party turns into Rohit extravaganza</p>
+    </div>
+    <div>
+      <span>line-height: 1.2[default]</span>
+      <p style="line-height: 1.2;">
+        India's captain turned a chase of 273 - which Afghanistan hoped would
+        prove awkward - into a glorified middle practice, treating their seamers
+        with the disdain usually reserved for net bowlers.
+      </p>
+    </div>
+    <div>
+      <span>line-height: 2</span>
+      <p style="line-height: 2;">
+        India's captain turned a chase of 273 - which Afghanistan hoped would
+        prove awkward - into a glorified middle practice, treating their seamers
+        with the disdain usually reserved for net bowlers.
+      </p>
+    </div>
+    <div>
+      <span>line-height: 0.7</span>
+      <p style="line-height: 0.7">
+        India's captain turned a chase of 273 - which Afghanistan hoped would
+        prove awkward - into a glorified middle practice, treating their seamers
+        with the disdain usually reserved for net bowlers.
+      </p>
+    </div>
+  </body>
+</html>

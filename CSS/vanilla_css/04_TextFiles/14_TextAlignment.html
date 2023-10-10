@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>Text Alignment!</title>
+    <style>
+      p {
+        border: thin solid red;
+        border-radius: 8px;
+        margin: 5px;
+        padding: 10px;
+      }
+
+      .text1 {
+        text-align: left;
+      }
+      .text2 {
+        text-align: center;
+      }
+      .text3 {
+        text-align: right;
+      }
+      .text4 {
+        direction: ltr;
+      }
+      .text5 {
+        direction: rtl;
+      }
+      .text6 {
+        direction: rtl;
+        unicode-bidi: bidi-override;
+      }
+
+      .text7 {
+        width: 200px;
+      }
+      .text8 {
+        width: 200px;
+        text-align: justify;
+      }
+      span {
+        font-size: 18px;
+        color: green;
+        padding: 3px;
+        border: thin solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>All about text Alignment</h1>
+    <p class="text1">text1 :: default :- text-align: left</p>
+    <p class="text2">text2 :: text-align: center</p>
+    <p class="text3">text3 :: text-align: right</p>
+    <p class="text4">text4 :: default :- direction: ltr</p>
+    <p class="text5">text5 :: direction : direction: rtl</p>
+    <p class="text6">text6 :: direction : right to left</p>
+    <p class="text6">text6 :: رحبًا بك في الفصل</p>
+
+    <p class="text7">
+      <span>text-align: <b>left</b>;</span>
+      Kohli is now back refreshed and recharged, and emphasised on the need to
+      look after one's mental well-being in this bio-bubbles era of cricket. "It
+      is very important to understand that it is crucial to refresh yourself
+      mentally,"
+    </p>
+
+    <p class="text8">
+      <span>text-align: <b>justify</b>;</span>
+      Kohli is now back refreshed and recharged, and emphasised on the need to
+      look after one's mental well-being in this bio-bubbles era of cricket. "It
+      is very important to understand that it is crucial to refresh yourself
+      mentally,"
+    </p>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>CSS Placement Priority</title>
+
+    <!-- First in sequence -->
+    <link rel="stylesheet" href="05_CSSExternal.css" />
+
+    <!-- second in sequence -->
+    <style>
+      #priorityDiv {
+        color: blue;
+        font-size: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Styles - priority - different places!</h2>
+    <div id="priorityDiv" style="color: red; font-size: 30px">
+      <p>This is how priority works!</p>
+      <p>The last encountered style from internal/external > inline</p>
+    </div>
+  </body>
+</html>

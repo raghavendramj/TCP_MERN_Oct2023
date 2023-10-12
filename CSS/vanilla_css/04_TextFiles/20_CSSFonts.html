@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>CSS Fonts</title>
+    <style>
+      body {
+        font-size: 20px;
+        margin: 20px;
+      }
+
+      p {
+        border: 2px solid green;
+        padding: 4px;
+      }
+
+      .one {
+        font-style: italic;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 2;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+
+      .two {
+        /* Short hand Syntax: 
+                    <'font-style'>   -> italic
+                 || <'font-weight'> -> bold
+                 || <'font-size'> [ / <'line-height'> ] ->  22px/1.2
+                 || <'font-family'> ] -> "Segoe UI", Tahoma, Geneva, Verdana 
+        */
+        font: italic bold 22px/1.2 "Segoe UI", Tahoma, Geneva, Verdana,
+          sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>CSS Fonts!</h2>
+
+    <p class="one">
+      They came for Virat Kohli, but they got Rohit Sharma. This was an
+      exhibition of white-ball batting in Delhi, as India's captain turned a
+      chase of 273 - which Afghanistan hoped would prove awkward - into a
+      glorified middle practice, treating their seamers with the disdain usually
+      reserved for net bowlers.
+    </p>
+
+    <p class="two">
+      India's second match of this tournament was billed as Kohli's homecoming,
+      his second and final World Cup appearance in the city he grew up in.
+      Twelve years ago, he made 12 off 20 balls in a low-key win over the
+      Netherlands; now, he was the man whose name featured on every other blue
+      jersey in the 32,000-strong crowd.
+    </p>
+  </body>
+</html>

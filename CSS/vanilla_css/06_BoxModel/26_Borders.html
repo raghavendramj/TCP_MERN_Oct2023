@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>CSS Borders</title>
+    <style>
+      div {
+        margin: 50px;
+        padding: 20px;
+      }
+
+      .div01 {
+        /*Syntax :-  <line-width> || <line-style> || <color> */
+        border: 5px dotted red;
+
+        /* Solid, dotted, dashed */
+        border-style: solid;
+        border-color: green;
+        border-width: 10px;
+
+        border-radius: 10px 15px 5px 25px;
+      }
+
+      .div02 {
+        border-width: 20px 10px 30px 10px;
+        border-style: dashed solid dotted solid;
+        border-color: red blue green yellowgreen;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div01">Borders Demo - 01</div>
+    <div class="div02">Borders Demo - 02</div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>CSS Positions!</title>
+    <style>
+      div {
+        padding: 5px;
+        color: red;
+        border: 2px solid blue;
+        border-radius: 10px;
+        width: 80%;
+      }
+      .relative{
+        position: relative;
+        /* 30px from its parent - body */
+        left: 30px; 
+      }
+      .container2{ 
+        border: 2px solid brown;
+        margin: 5px;
+        position: relative;
+         /* 30px from its parent - .relative */
+        left: 30px;
+      }
+
+      .conatainer3{ 
+        border: 2px solid red;
+        margin: 5px;
+        position: relative;
+         /* 30px from its parent - .container2 */
+        left: 30px;
+      }
+
+      .conatainer4{ 
+        border: 2px solid greenyellow;
+        margin: 5px;
+        position: relative;
+         /* 30px from its parent - .relative */
+        left: 30px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h2>Position: Relative</h2>
+    <div class="relative">
+      This is external div :: Relative
+      <div class="container2">
+        Container 2
+        <div class="conatainer3">Container 3</div>
+      </div>
+      
+      <div class="conatainer4">Container 4</div>
+    </div>
+  </body>
+</html>

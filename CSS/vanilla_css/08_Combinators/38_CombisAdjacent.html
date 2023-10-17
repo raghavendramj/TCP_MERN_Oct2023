@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>CSS Adjacent Selectors</title>
+    <style>
+      * {
+        font-size: 20px;
+      }
+      p {
+        border: 3px solid red;
+        border-radius: 5px;
+        margin: 10px;
+        padding: 10px;
+      }
+
+      /* Adjacent Sibling Selector  (+) applies only to right side element*/
+      p + div {
+        background-color: antiquewhite;
+        font-size: larger;
+        font-weight: bold;
+      }
+
+      p + h2 + p {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Combinators - Adjacent Combinations</h2>
+    <p>The European Union's internal market</p>
+    <div>hierry Breton told Reuters and one other media outlet</div>
+    <p>
+      He knows very well that we have some rules for the automotive industry
+    </p>
+    <h2>This is a simple h2</h2>
+    <p>
+      To Apply The much awaited LIC IPO is coming next month and would be
+      India's biggest public offer The much-awaited Life Insurance Corporation's
+    </p>
+  </body>
+</html>

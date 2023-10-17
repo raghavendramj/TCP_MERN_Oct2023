@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Combinators - CSS!</title>
+    <style>
+      * {
+        font-size: 20px;
+      }
+      p {
+        border: 3px solid red;
+        border-radius: 5px;
+        margin: 10px;
+        padding: 10px;
+      }
+
+      /* Child Selector (>) */
+      div > p.two {
+        text-indent: 30px;
+        color: blue;
+        font-size: 30px;
+        font-weight: bolder;
+      }
+
+      /* Descendant Selectors -> (SPACE) */
+      span p {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>CSS Combinators</h2>
+    <p>Is a fundamental concept!</p>
+    <div>
+      <p class="one">Virat Kohli</p>
+      <p class="two">Rishabh Pant</p>
+    </div>
+    <hr />
+    <hr />
+    <span>
+      <div class="seven">This is normal division</div>
+      <p class="three">Jasprit Bumrah</p>
+      <p class="four">Zaheer Khan</p>
+    </span>
+  </body>
+</html>

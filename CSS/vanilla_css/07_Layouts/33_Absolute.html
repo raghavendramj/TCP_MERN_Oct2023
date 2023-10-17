@@ -2,6 +2,10 @@
   <head>
     <title>CSS Positions! - Absolute</title>
     <style>
+      * {
+        margin: 0;
+      }
+
       p {
         font-size: 30px;
       }
@@ -12,8 +16,8 @@
       }
 
       .relative {
-        width: 500px;
-        height: 400px;
+        width: 300px;
+        height: 100px;
         border: 3px solid green;
         position: relative;
         left: 80;
@@ -25,18 +29,18 @@
         height: 100px;
         border: 3px solid red;
         position: relative;
-        left: 80;
-        top: 80;
+        left: 100;
+        top: 100;
       }
     </style>
   </head>
   <body>
-    <!-- <h2>Positions! - Absolute</h2>
+    <h2>Positions! - Absolute</h2>
     <p>
       An element with position: absolute; is positioned relative to the nearest
       positioned ancestor (instead of positioned relative to the viewport, like
       fixed):
-`    </p> -->
+`    </p>
 
     <div class="relative">This is external Div - relative</div>
     <div class="absDiv">This is my absolute div</div>

@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Pseudo Elements</title>
+    <style>
+      p {
+        text-indent: 20px;
+      }
+      p::first-line {
+        color: red;
+      }
+      p::first-letter {
+        color: blue;
+        font-size: xx-large;
+      }
+
+      div::before {
+        content: "This is before for div - ";
+        color: green;
+        font-size: 20px;
+        text-decoration: underline wavy red;
+      }
+
+      div::after {
+        content: "- This is end of div (after) ";
+        color: blue;
+        font-size: 20px;
+        text-decoration: underline solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Pseudo Elements</h2>
+    <hr />
+    <p>
+      You can use the ::first-line pseudo-element to add a special effect to the
+      first line of a text. Some more text. And even more, and more, and more,
+      and more, and more, and more, and more, and more, and more, and more, and
+      more, and more.
+    </p>
+    <hr />
+    <p class="one">
+      My name is Mr.Aex first line of a text. Some more text. And even more, and
+      more, and more, and more, and more, and more, and more, and more, and
+      more, and more, and more, and more.
+    </p>
+    <hr />
+    <div>
+      The ::before pseudo-element inserts content before the content of an
+      element.
+    </div>
+    <div>
+      The ::before pseudo-element inserts content before the content of an
+      element.
+    </div>
+    <hr />
+  </body>
+</html>

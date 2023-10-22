@@ -5,13 +5,43 @@
       div {
         font-size: 30px;
       }
- 
+
+      div[title~="two"] {
+        color: green;
+      }
+
+      div[title~="three"] {
+        color: red;
+      }
     </style>
   </head>
   <body>
-    <h1>CSS [attribute] Selectors - 02</h1>
+    <h2>CSS [attribute~="value"] Selector</h2>
+    <p>
+      used to select elements with an attribute value containing a specified
+      word.
+    </p>
+    <p>
+      The [attribute~="value"] selector is used to select elements with an
+      attribute value containing a specified word.
+    </p>
     <div title="one two">One and Two</div>
     <div title="two three">Two and Three</div>
     <div title="three four">Three and Four</div>
+    <hr />
+    <h2>CSS [attribute|="value"]</h2>
+    <p>
+      whose value can be exactly the specified value, or the specified value
+      followed by a hyphen (-).
+    </p>
+    <div class="top-header">Welcome</div>
+    <p class="top-text">Hello world!</p>
+    <p class="topcontent">Are you learning CSS?</p>
+    <hr />
   </body>
 </html>
+
+<!-- Give green color for div whoes titles attribute has value two in it. -->
+<!-- Give green red for div whoes titles attribute has value three in it. -->
+
+<!-- Style elements which has got "top" as class in them to red -->

@@ -13,6 +13,10 @@
       div[title~="three"] {
         color: red;
       }
+
+      [class|="top"] {
+        color: violet;
+      }
     </style>
   </head>
   <body>
@@ -38,10 +42,16 @@
     <p class="top-text">Hello world!</p>
     <p class="topcontent">Are you learning CSS?</p>
     <hr />
+    <h2>CSS [attribute^="value"] Selector</h2>
+    <p>whose value starts with the specified value.</p>
+    <div class="bottom-header">Welcome</div>
+    <p class="textbottom">Hello world!</p>
+    <p class="bottomcontent">Are you learning CSS?</p>
   </body>
 </html>
 
 <!-- Give green color for div whoes titles attribute has value two in it. -->
 <!-- Give green red for div whoes titles attribute has value three in it. -->
 
-<!-- Style elements which has got "top" as class in them to red -->
+<!-- Style elements which contains "top" as class in them to red -->
+<!-- Style elements which start swith "bottom" as class in them to red -->

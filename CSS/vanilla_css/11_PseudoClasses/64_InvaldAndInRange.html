@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <style>
+        input:invalid{
+            border: 2px solid blue;
+            border-radius: 5px;
+            background-color: lightgray;
+            padding: 5px;
+            color: red;
+        }
+        input:valid{
+            border: 2px solid black;
+            border-radius: 5px;
+            background-color: lightgray;
+            padding: 5px;
+            color: green;
+        }
+
+    </style>
+  </head>
+  <body>
+    <h1>Demo of the :invalid selector</h1>
+
+    <input type="email" value="supportEmail" />
+    <br />
+    <br />
+    <input type="number" min="5" max="10" />
+
+    <p>Try typing a legal e-mail address, to see the styling disappear.</p>
+  </body>
+</html>

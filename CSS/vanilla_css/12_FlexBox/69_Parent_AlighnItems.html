@@ -1,13 +1,15 @@
 <html>
   <head>
-    <title>CSS Flex Box - Parent :: Flex Justify</title>
+    <title>CSS Flex Box - Parent :: Flex Align Items</title>
     <style>
       /* Parent Selector */
       .conatainer {
         background-color: dodgerblue;
-        display: flex;
-        /*  center, flex-start, flex-end, space-around, space-between, pace-evenly */
-        justify-content: space-around;
+        display: flex; 
+        width: 90%;
+        height: 50%;
+        /*  center, flex-start, flex-end */
+        align-items: flex-start; 
       }
 
       /* Child Selector */
@@ -20,7 +22,7 @@
     </style>
   </head>
   <body>
-    <h1>CSS Flex Box - Parent :: Flex Justify</h1>
+    <h1>CSS Flex Box - Parent :: Flex Align Items</h1>
     <div class="conatainer">
       <div>1</div>
       <div>2</div>

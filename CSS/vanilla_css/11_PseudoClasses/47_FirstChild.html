@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Child Selectors - First Child</title>
+    <style>
+      p:first-child {
+        color: red;
+        font-size: 20px;
+      }
+      p:last-child {
+        color: blue;
+        font-size: 20px;
+      }
+      div {
+        text-indent: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Child Selectors - First Child</h2>
+    <div>Selects every p elements that is the first child of its parent</div>
+
+    <p>This is paragraph 1.</p>
+    <p>This is paragraph 2.</p>
+    <div>
+      <p>This is paragraph 3.</p>
+      <p>This is paragraph 3.1</p>
+      <p>This is paragraph 3.2</p>
+      <p>This is paragraph 4.</p>
+    </div>
+    <p>This is paragraph 5.</p>
+    <p>This is paragraph 6.</p>
+  </body>
+</html>

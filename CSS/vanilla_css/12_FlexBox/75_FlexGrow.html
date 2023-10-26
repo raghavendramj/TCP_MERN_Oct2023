@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>CSS Flex Child - flex-grow</title>
+    <style>
+      div {
+        border: 2px solid green;
+        border-radius: 5px;
+      }
+
+      /* Parent Container */
+      .flex-container {
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        display: flex;
+        align-items: stretch;
+      }
+
+      /* Children Elements */
+      .flex-container > div {
+        background-color: dodgerblue;
+        color: white;
+        margin: 10px;
+        padding: 20px;
+        text-align: center;
+        font-size: 30px;
+      }
+
+      .flex-container > :nth-child(3) {
+        flex-grow: 1;
+      }
+      .flex-container > :nth-child(4) {
+        flex-grow: 2;
+      }
+      .flex-container > :nth-child(1) {
+        flex-grow: 6;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>flex-grow</h2>
+    <div class="flex-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div> 
+  </body>
+</html>

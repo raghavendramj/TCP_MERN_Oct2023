@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>CSS Flex Child - flex-shrink</title>
+    <style>
+      div {
+        border: 2px solid green;
+        border-radius: 5px;
+      }
+
+      /* Parent Container */
+      .flex-container {
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        display: flex;
+        align-items: stretch;
+      }
+
+      /* Children Elements */
+      .flex-container > div {
+        background-color: dodgerblue;
+        color: white;
+        margin: 10px;
+        padding: 20px;
+        width: 400px;
+        text-align: center;
+        font-size: 30px;
+      }
+
+      .flex-container > :nth-child(3) {
+        flex-shrink: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>flex-shrink</h2>
+    <div class="flex-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div> 
+    </div>
+  </body>
+</html>

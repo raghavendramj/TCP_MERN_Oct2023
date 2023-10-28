@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>JavaScript Intro - Internal- Head</title>
+    <style>
+      span {
+        border: 2px solid red;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 20px;
+      }
+    </style>
+    <script>
+      function replaceText() {
+        var spanElement = document.getElementById("contentToReplace");
+        var contentToReplace = document.getElementById("textContent").value;
+        spanElement.innerHTML = contentToReplace;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Welcome to JavaScript</h1>
+
+    <p>Content :- <input type="text" id="textContent" /></p>
+    <p><button onclick="replaceText()">Replace Name</button></p>
+    <div>Name of the Person :- <span id="contentToReplace">Raghav</span></div>
+  </body>
+</html>

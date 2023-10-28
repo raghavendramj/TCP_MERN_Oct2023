@@ -22,13 +22,14 @@
 
       .item2 {
         /* starts from 3rd column spans upto 2 more columns */
-        grid-column: 3 /span 2; 
+        grid-column: 3 / span 2;
         /* starts from 1st row, spans up to 2nd row */
         grid-row: 1 / span 2;
       }
 
-      .item5{
+      .item5 {
         grid-column: 1 / span 4;
+        /* This will make the row to stick on to 3rd row position */
         grid-row: 3;
       }
     </style>
@@ -40,6 +41,10 @@
       <div class="grid-item item2">2</div>
       <div class="grid-item item3">3</div>
       <div class="grid-item item4">4</div>
+      <div class="grid-item item4">4.1</div>
+      <div class="grid-item item4">4.2</div>
+      <div class="grid-item item4">4.3</div>
+      <div class="grid-item item4">4.4</div>
       <div class="grid-item item5">5</div>
     </div>
   </body>

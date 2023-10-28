@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>CSS Grids - Justify Content</title>
+    <style>
+      .grid-container {
+        background-color: #2196f3;
+        padding: 10px;
+
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+        /*space-evenly, space-between, 
+        space-around, center, start, end */
+        align-content: space-evenly;
+        height: 600px;
+      }
+
+      .grid-container > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Grids - Align Content - Applicable for ROWS</h2>
+    <div class="grid-container">
+      <div class="grid-item">1</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">3</div>
+      <div class="grid-item">4</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">6</div>
+      <div class="grid-item">7</div>
+      <div class="grid-item">8</div>
+      <div class="grid-item">9</div>
+    </div>
+  </body>
+</html>

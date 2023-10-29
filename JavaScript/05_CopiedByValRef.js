@@ -32,3 +32,19 @@ fruits.push("Orange");
 
 console.log("fruits :- ", fruits);
 console.log("veggies :- ", veggies);
+
+var citiesA = ["Bangalore", "Chennai", "Mumbai", "Kolkata", "Delhi"];
+var citiesB = citiesA;
+
+console.log("-----------------------------------------------------");
+console.log("1. citiesA :- ", citiesA);
+console.log("1. citiesB :- ", citiesB);
+
+citiesB.pop(); //Impacts both the variables -> pass by reference
+citiesA = ["Bangalore", "Chennai", "Mumbai"]; //redeclaration :- changes the reference of citiesA
+
+console.log("-----------------------------------------------------");
+console.log("2. citiesA :- ", citiesA);
+console.log("2. citiesB :- ", citiesB);
+
+

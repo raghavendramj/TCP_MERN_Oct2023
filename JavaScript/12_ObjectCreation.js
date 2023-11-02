@@ -48,7 +48,7 @@ function factoryFunction() {
 //2. Constructor Function.
 function constructorFunction() {
   function Person(nameVariable, ageVariable, email) {
-    // {}
+    // {} -> Object.create({})
     // {this is linked}
     this.name = nameVariable;
     // {name: 'Raghavendra'}
@@ -84,4 +84,13 @@ function constructorFunction() {
     console.log("employee2.fullName() -> ", employee2.fullName());
   }
 }
-constructorFunction();
+// constructorFunction();
+
+//3. Object.Create()
+function objectCreate() {
+  var animal = Object.create({});
+  animal.name = "Lion";
+  animal.foodHabitat = "Carnivore";
+  console.log("1. animal :- ", animal);
+}
+objectCreate();

@@ -10,7 +10,8 @@
       }
     </style>
     <script>
-      function replaceText() {
+      function replaceText(event) {
+        console.log("Printing event :- ", event);
         var spanElement = document.getElementById("contentToReplace");
         var contentToReplace = document.getElementById("textContent").value;
         spanElement.innerHTML = contentToReplace;
@@ -21,7 +22,7 @@
     <h1>Welcome to JavaScript</h1>
 
     <p>Content :- <input type="text" id="textContent" /></p>
-    <p><button onclick="replaceText()">Replace Name</button></p>
+    <p><button onclick="replaceText(event)">Replace Name</button></p>
     <div>Name of the Person :- <span id="contentToReplace">Raghav</span></div>
   </body>
 </html>

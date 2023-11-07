@@ -17,7 +17,7 @@ console.log("1. Output is  :- ", person.fullName());
 console.log("2. Output is  :- ", person.fullName.call());
 
 // call(objectInstance)
-// call(objectInstance, arg1, /* …, */ argN)
+
 
 var objJohn = {
   firstName: "John",
@@ -35,3 +35,19 @@ console.log("4. Output is  :- ", person.fullName.call(objGill));
 
 // Method Reuse
 // With the call() method, you can write a method that can be used on different objects.
+
+function add(a) { 
+  console.log("Received this is:- ", this);
+  return a + this.b;
+}
+var obj1 = {
+  b: 20,
+};
+// call(objectInstance, arg1, /* …, */ argN)
+console.log("1. add result  :- ", add(40));
+console.log("2. add result  :- ", add.call(obj1, 10));
+
+var obj2 = {
+  b: 15,
+};
+console.log("3. add result  :- ", add.call(obj2, 23));

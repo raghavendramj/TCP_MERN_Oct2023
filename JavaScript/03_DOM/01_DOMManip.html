@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>DOM Manipulation</title>
+  </head>
+  <body>
+    <h1>Welcome to DOM</h1>
+    <p id="paragraph">This is the paragraph!</p>
+    <div>
+      <label for="Enter your name :- "></label>
+      <input type="text" name="name" id="name" />
+    </div>
+
+    <h2>Finding HTML Elements</h2>
+    <ul>
+      <li><b>document.getElementById(id)</b> Find an element by element id</li>
+      <li>
+        <b>document.getElementsByTagName(name)</b> Find elements by tag name
+      </li>
+      <li>
+        <b>document.getElementsByClassName(name) </b>Find elements by class name
+      </li>
+    </ul>
+
+    <h2>Changing HTML Elements</h2>
+    <h3>Property change</h3>
+    <ul>
+      <li>
+        <i> element.innerHTML = new html content</i> Change the inner HTML of an
+        element
+      </li>
+      <li>
+        <i>element.attribute = new value</i> Change the attribute value of an
+        HTML element
+      </li>
+      <li>
+        <i>element.style.property = new style</i> Change the style of an HTML
+        element
+      </li>
+    </ul>
+    <h3>Method change</h3>
+    <ul>
+      <li>
+        <i>element.setAttribute(attribute, value) :- </i> Change the attribute
+        value of an HTML element
+      </li>
+    </ul>
+    <script>
+      function changeContent() {
+        document.getElementById("name").value = "John Doe";
+        document.getElementById("name").style.backgroundColor = "lightblue";
+        document.getElementById("name").disabled = true;
+        document.getElementById("name").disabled = false;
+
+        document.getElementById("name").setAttribute("disabled", "true");
+      }
+      changeContent();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Rating Service</title>
+  </head>
+  <body>
+    <p>Please rate the service</p>
+    <p>
+      <label for="very-poor">
+        <input type="radio" name="rating" value="Very Poor" /> Very Poor
+      </label>
+      <label for="very-poor">
+        <input type="radio" name="rating" value="Poor" /> Poor
+      </label>
+      <label for="very-poor">
+        <input type="radio" name="rating" value="Good" /> Good
+      </label>
+      <label for="very-poor">
+        <input type="radio" name="rating" value="Very Good" /> Very Good
+      </label>
+    </p>
+    <p id="output">Ouput :-</p>
+    <p>
+      <button id="btnRate">Submit</button>
+    </p>
+    <script>
+      var btnRate = document.getElementById("btnRate");
+
+      btnRate.addEventListener("click", function () {
+        var ratings = document.getElementsByName("rating");
+        
+        ratings.forEach(function (rate) {
+          if (rate.checked) {
+            document.getElementById("output").innerHTML =
+              "You have selected " + rate.value;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

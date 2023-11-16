@@ -7,10 +7,11 @@
     <br />
     <button>Add New Element</button>
     <script>
+      var button = document.querySelector("button");
+      console.log("button -> ", button);
       button.addEventListener("click", function () {
         logicalAddElement();
       });
-
       function logicalAddElement() {
         var allDivs = document.querySelectorAll("div");
         var allDivsLength = allDivs.length;
@@ -30,8 +31,6 @@
         newDiv.innerHTML = "Latest div added";
         document.querySelector("div").after(newDiv);
       }
-      var button = document.querySelector("button");
-      console.log("button -> ", button);
     </script>
   </body>
 </html>

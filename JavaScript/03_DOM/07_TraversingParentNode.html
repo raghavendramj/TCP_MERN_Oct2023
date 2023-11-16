@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Javascript DOM Traversals</title>
+  </head>
+  <body>
+    <div id="main">
+      <p class="note">This is a simple note</p>
+    </div>
+    <ul id="menu">
+      <li class="first">Home</li>
+      <li>Products</li>
+      <li class="mid">Customer Support</li>
+      <li>Carrers</li>
+      <li>News</li>
+      <li class="last">About Us</li>
+    </ul>
+    <script>
+      function parentNode() {
+        var para = document.querySelector(".note");
+        console.log("Current Element :- ", para);
+        console.log("Parent Element :- ", para.parentNode);
+        console.log("typeof(Parent Element) :- ", typeof para.parentNode);
+      }
+      function childNode() {
+        var menuElement = document.querySelector("#menu");
+        console.log("menuElement :- ", menuElement);
+        console.log(" firstChild Object :- ", menuElement.firstChild); //Document Object
+        console.log(
+          "firstElementChild HTML Element :- ",
+          menuElement.firstElementChild
+        ); //HTML Element
+
+        console.log("All children under menu is :- ", menuElement.children); //HTMLCollection
+        console.log("menuElement.children[5] :- ", menuElement.children[5]); //5th HTMLElement
+
+        var lastChildElement = menuElement.lastElementChild;
+        console.log("lastChildElement :- ", lastChildElement);
+      }
+      //childNode();
+
+      function iterateThrough() {
+        var firstElement = document.querySelector(".first");
+        while (firstElement) {
+          console.log("NEXT::currentElement :- ", firstElement);
+          firstElement = firstElement.nextElementSibling; //Gets Next Sibling Element
+        }
+
+        console.log("----------------------------------------------")
+
+        var lastElement = document.querySelector(".last");
+        while (lastElement) {
+          console.log("PREVIOUS::currentElement :- ", lastElement);
+          lastElement = lastElement.previousElementSibling; //Gets Previous Sibling Element
+        }
+      }
+      iterateThrough();
+    </script>
+  </body>
+</html>

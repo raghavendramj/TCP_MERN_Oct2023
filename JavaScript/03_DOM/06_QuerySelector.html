@@ -1,6 +1,11 @@
 <html>
   <head>
     <title>Query Selectors!</title>
+    <style>
+        body::first-line{
+            color: red;
+        }
+    </style>
   </head>
   <body>
     <header>
@@ -39,24 +44,53 @@
       </div>
     </main>
     <script>
-      //Universal Selectors!
-      var firstFoundElement = document.querySelector("*");
-      console.log("First found element :- ", firstFoundElement);
+      function selectorsOne() {
+        //Universal Selectors!
+        var firstFoundElement = document.querySelector("*");
+        console.log("First found element :- ", firstFoundElement);
 
-      var allElements = document.querySelectorAll("*");
-      console.log("All allElements :- ", allElements);
+        var allElements = document.querySelectorAll("*");
+        console.log("All allElements :- ", allElements);
 
-      //Type/Element Selector
-      var firstH2 = document.querySelector("h2");
-      console.log("firstH2 :- ", firstH2);
+        //Type/Element Selector
+        var firstH2 = document.querySelector("h2");
+        console.log("firstH2 :- ", firstH2);
 
-      var allH2s = document.querySelectorAll("h2");
-      console.log("allH2s :- ", allH2s);
+        var allH2s = document.querySelectorAll("h2");
+        console.log("allH2s :- ", allH2s);
 
-      //Class Selector
-      var firstClassSect = document.querySelectorAll(".sect");
-      console.log("firstClassSect :- ", firstClassSect);
+        //Class Selector
+        var firstClassSect = document.querySelectorAll(".sect");
+        console.log("firstClassSect :- ", firstClassSect);
 
+        //Id Selector
+        var firstIdElement = document.querySelector("#companyName");
+        console.log("firstIdElement :- ", firstIdElement);
+
+        //Grouping  selectors!
+        var multipleSelectors = document.querySelectorAll(
+          ".menu-item, #companyName"
+        );
+        console.log("multipleSelectors :- ", multipleSelectors);
+      }
+
+      function selectorsTwo() {
+        var attrHref = document.querySelectorAll("[href]");
+        console.log("attrHref :- ", attrHref);
+
+        //Child combinator
+        var firstLi = document.querySelector("ul > li");
+        console.log("firstLi :- ", firstLi);
+
+        //Pseudo-classes
+        var thirdLi = document.querySelector("ul > li:nth-child(3)");
+        console.log("thirdLi :- ", thirdLi);
+
+        //Pseudo-elements
+        var firstLine = document.querySelector("body::first-line");
+        console.log("firstLine :- ", firstLine);
+      }
+      selectorsTwo();
     </script>
   </body>
 </html>

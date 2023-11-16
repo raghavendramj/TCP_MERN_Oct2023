@@ -18,9 +18,9 @@
 
     <button id="btnCount">Count H2</button>
     <script>
-      let btn = document.getElementById("btnCount");
+      var btn = document.getElementById("btnCount");
       btn.addEventListener("click", () => {
-        let headings = document.getElementsByTagName("h2");
+        var headings = document.getElementsByTagName("h2");
         document.getElementById(
           "count"
         ).innerHTML = `The number of H2 tags: ${headings.length}`;

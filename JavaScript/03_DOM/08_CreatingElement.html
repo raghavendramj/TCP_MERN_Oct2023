@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Create Element Example</title>
+  </head>
+  <body>
+    <div>Plain Div - Create Element</div>
+    <br />
+    <button>Add New Element</button>
+    <script>
+      button.addEventListener("click", function () {
+        logicalAddElement();
+      });
+
+      function logicalAddElement() {
+        var allDivs = document.querySelectorAll("div");
+        var allDivsLength = allDivs.length;
+
+        //Create new Element
+        var newDiv = document.createElement("div");
+        newDiv.id = "contentDiv_" + allDivsLength;
+        newDiv.innerHTML = "Latest duv of contentDiv_" + allDivsLength;
+
+        var lastDiv = allDivs[allDivsLength - 1];
+        lastDiv.after(newDiv);
+      }
+
+      function simpleCreateElement() {
+        var newDiv = document.createElement("div");
+        newDiv.id = "contentDiv ";
+        newDiv.innerHTML = "Latest div added";
+        document.querySelector("div").after(newDiv);
+      }
+      var button = document.querySelector("button");
+      console.log("button -> ", button);
+    </script>
+  </body>
+</html>

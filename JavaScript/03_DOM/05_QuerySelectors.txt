@@ -38,3 +38,82 @@ To select all elements that have a given attribute, you use one of the following
     [attribute^=value]
     [attribute$=value]
     [attribute*$*=value]
+
+
+The following example finds the first element with the attribute [autoplay] with any value:
+
+let autoplay = document.querySelector('[autoplay]');
+ 
+And the following example finds all elements that have [autoplay] attribute with any value:
+
+let autoplays = document.querySelectorAll('[autoplay]');
+ 
+
+Grouping selectors
+To group multiple selectors, you use the following syntax:
+
+selector, selector, ...
+The selector list will match any element with one of the selectors in the group.
+
+The following example finds all <div> and <p> elements:
+
+let elements = document.querySelectorAll('div, p');
+ 
+
+Combinators
+1) descendant combinator
+To find descendants of a node, you use the space ( ) descendant combinator syntax:
+
+selector selector
+For example p a will match all <a> elements inside the p element:
+
+let links = document.querySelector('p a');
+ 
+2) Child combinator
+The > child combinator finds all elements that are direct children of the first element:
+
+selector > selector
+The following example finds all li elements that are directly inside a <ul> element:
+
+let listItems = document.querySelectorAll('ul > li');
+ 
+To select all li elements that are directly inside a <ul> element with the class nav:
+
+let listItems = document.querySelectorAll('ul.nav > li');
+ 
+3) General sibling combinator
+The ~ combinator selects siblings that share the same parent:
+
+selector ~ selector
+For example, p ~ a will match all <a> elements that follow the p element, immediately or not:
+
+let links = document.querySelectorAll('p ~ a');
+ 
+4) Adjacent sibling combinator
+The + adjacent sibling combinator selects adjacent siblings:
+
+selector + selector
+For example, h1 + a matches all elements that directly follow an h1:
+
+let links = document.querySelectorAll('h1 + a');
+ 
+And select the first <a> that directly follows an h1:
+
+let links = document.querySelector('h1 + a');
+ 
+Pseudo
+1) Pseudo-classes
+The : pseudo matches elements based on their states:
+
+element:state
+Code language: CSS (css)
+For example, the li:nth-child(2) selects the second <li> element in a list:
+
+let listItem = document.querySelectorAll('li:nth-child(2)');
+ 
+2) Pseudo-elements
+The :: represent entities that are not included in the document.
+
+For example, p::first-line matches the first line of all p elements:
+
+let links = document.querySelector('p::first-line'); 

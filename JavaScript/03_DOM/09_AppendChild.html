@@ -4,13 +4,24 @@
   </head>
   <body>
     <h1>Append Child Example</h1>
-
-    <ul></ul>
-
     <label for="menu-item">Enter Menu Name :- </label>
     <input type="text" id="menuName" />
     <br />
     <br />
     <button>Press Enter to Add to Menu</button>
+    <script>
+      var button = document.querySelector("button");
+      //New UL Element
+      var newUL = document.createElement("ul");
+      newUL.className = "menu";
+      document.querySelector("h1").after(newUL);
+
+      button.addEventListener("click", function () {
+        var newLi = document.createElement("li");
+        newLi.className = "menu-item";
+        newLi.innerHTML = document.getElementById("menuName").value; 
+        document.querySelector(".menu").appendChild(newLi);
+      });
+    </script>
   </body>
 </html>

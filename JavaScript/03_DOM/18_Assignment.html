@@ -1,0 +1,68 @@
+<!-- Question 
+    -> Division -> Green 
+        -> li -> blue color added 
+        -> li -> red color added
+    -> text input -> Red, Blue, Green, lighblue, etc....
+        -> Create a button
+    -> Generate random color and assign it div -->
+<html>
+  <head>
+    <title>DOM Exercise</title>
+  </head>
+  <body>
+    <h1>DOM Manipulation Exercise</h1>
+    <ul></ul>
+    <script>
+      var h1Ref = document.querySelector("h1");
+
+      var divElement = document.createElement("div");
+      divElement.id = "divElement";
+      divElement.style.height = "200px";
+      divElement.style.width = "240px";
+      divElement.style.backgroundColor = "purple";
+      divElement.style.border = "2px solid black";
+      divElement.style.margin = "20px";
+      divElement.style.borderRadius = "200px";
+
+      h1Ref.appendChild(divElement);
+
+      var inpElement = document.createElement("input");
+      inpElement.type = "text";
+      inpElement.style.fontSize = "20px";
+      inpElement.id = "colorInputBox";
+      document.querySelector("#divElement").after(inpElement);
+
+      var btnElement = document.createElement("button");
+      btnElement.addEventListener("click", changeColor);
+      btnElement.textContent = "Change Div Color!";
+      btnElement.style.fontSize = "20px";
+      var inpBox = document.querySelector("#colorInputBox");
+      inpBox.after(btnElement);
+
+      var randomColorElement = document.createElement("button");
+      randomColorElement.addEventListener("click", generateRandomColor);
+      randomColorElement.textContent = "Generate Random Color!";
+      randomColorElement.style.fontSize = "20px";
+      h1Ref.appendChild(randomColorElement);
+
+      function changeColor() {
+        appendCurrentParaElement();
+        divElement.style.backgroundColor = inpBox.value;
+      }
+
+      function generateRandomColor() {
+        appendCurrentParaElement();
+        var randomColor = Math.floor(Math.random() * 5621245).toString(16);
+        divElement.style.backgroundColor = randomColor;
+      }
+
+      function appendCurrentParaElement() {
+        var currentColor = divElement.style.backgroundColor;
+        var newLi = document.createElement("li");
+        newLi.innerHTML = currentColor + " color was added";
+        newLi.style.color = currentColor;
+        document.querySelector("ul").appendChild(newLi);
+      }
+    </script>
+  </body>
+</html>

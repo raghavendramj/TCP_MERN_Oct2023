@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Get/Set/Remove Attribute</title>
+  </head>
+  <body>
+    <h1>Get/Set/Remove Attribute</h1>
+    <label for="firstName">First Name :- </label>
+    <input type="text" name="name" id="firstName" />
+    <br />
+    <br />
+    <button id="setBtn">Set Attribute</button>
+    <button id="getBtn">Get Attributes</button>
+    <button id="removeBtn">Remove Attributes</button>
+
+    <script>
+      var inputField = document.querySelector("#firstName");
+      var setBtn = document.querySelector("#setBtn");
+      setBtn.addEventListener("click", function () {
+        inputField.setAttribute("value", "Setter test!");
+        inputField.setAttribute("disabled", "true");
+      });
+
+      var getBtn = document.querySelector("#getBtn");
+      getBtn.addEventListener("click", function () {
+        console.log("type:- ", inputField.getAttribute("type"));
+        if (inputField.hasAttribute("disabled")) {
+          console.log("Disabled ?:-", inputField.getAttribute("disabled"));
+        }
+      });
+
+      var removeBtn = document.querySelector("#removeBtn");
+      removeBtn.addEventListener("click", function () {
+        inputField.removeAttribute("disabled");
+        inputField.style.color = "blue";
+        inputField.style.fontSize = "20px";
+      });
+    </script>
+  </body>
+</html>

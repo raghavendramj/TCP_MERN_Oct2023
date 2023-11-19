@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>HTML Event Capturing</title>
+  </head>
+  <body>
+    <h1>HTML Event Capturing</h1>
+    <div style="border: 1px solid red; padding: 15px">
+      <p style="border: 1px solid blue; padding: 15px">
+        <span style="border: 1px solid grey; padding: 10px">
+          <button>Capturing</button>
+        </span>
+      </p>
+    </div>
+    <!-- When you click the button, the click event occurs in the following order:
+    CAPTURING
+    ----------
+    1. div
+    2. para
+    3. span
+    4. button -->
+    <script>
+      var btn = document.querySelector("button");
+      btn.addEventListener(
+        "click",
+        function () {
+          console.log("Bubbling::btn is clicked!");
+        },
+        true
+      );
+
+      var span = document.querySelector("span");
+      span.addEventListener(
+        "click",
+        function () {
+          console.log("Bubbling::span is clicked!");
+        },
+        true
+      );
+
+      var para = document.querySelector("p");
+      para.addEventListener(
+        "click",
+        function () {
+          console.log("Bubbling::para is clicked!");
+        },
+        true
+      );
+
+      var division = document.querySelector("div");
+      division.addEventListener(
+        "click",
+        function () {
+          console.log("Bubbling::Div is clicked!");
+        },
+        true
+      );
+    </script>
+  </body>
+</html>

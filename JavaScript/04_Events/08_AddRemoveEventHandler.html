@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Add / Remove Event Hanlder</title>
+  </head>
+  <body>
+    <h1>Add / Remove Event Hanlder</h1>
+    <button>Subscribe</button>
+    <button>Un-Subscribe</button>
+    <br />
+    <br />
+    <button>AttachClickEvent</button>
+    <button>RemoveClickEvent</button>
+    <script>
+      var subsBtn = document.querySelectorAll("button")[0];
+      var unSubsBtn = document.querySelectorAll("button")[1];
+
+      var counter = 0;
+      function subscribeHandler() {
+        console.log("Subscribed_", counter++);
+      }
+      function unSubscribeHandler() {
+        console.log("Un-subscribed_", counter--);
+      }
+
+      var attachEventBtn = document.querySelectorAll("button")[2];
+      attachEventBtn.addEventListener("click", function () {
+        subsBtn.addEventListener("click", subscribeHandler);
+        unSubsBtn.addEventListener("click", unSubscribeHandler);
+      });
+
+      var removeEventBtn = document.querySelectorAll("button")[3];
+      removeEventBtn.addEventListener("click", function () {
+        subsBtn.removeEventListener("click", subscribeHandler);
+        unSubsBtn.removeEventListener("click", unSubscribeHandler);
+      });
+    </script>
+  </body>
+</html>

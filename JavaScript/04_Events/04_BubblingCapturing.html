@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>HTML Event Capturing</title>
+  </head>
+  <body>
+    <h1>HTML Event Capturing</h1>
+    <div style="border: 1px solid red; padding: 15px">
+      <p style="border: 1px solid blue; padding: 15px">
+        <span style="border: 1px solid grey; padding: 10px">
+          <button>Capturing and Bubbling!</button>
+        </span>
+      </p>
+    </div>
+    <!-- When you click the button, the click event occurs in the following order:
+    BUBBLING
+    ----------
+    1. button
+    2. span
+    3. para
+    4. div 
+
+    CAPTURING
+    ----------
+    1. div
+    2. para
+    3. span
+    4. button -->
+
+    <script>
+      function captureEvent(event) {
+        console.log(`******** Capturing ${event.currentTarget.tagName}`);
+      }
+      function bubbleEvent(event) {
+        console.log(`<><><><><> Bubbling ${event.currentTarget.tagName}`);
+      }
+
+      var elements = document.querySelectorAll("*"); //All the Nodes in the document
+      for (let element of elements) {
+        //console.log("element -> ", element);
+        element.addEventListener("click", captureEvent, true);
+        element.addEventListener("click", bubbleEvent);
+      }
+    </script>
+  </body>
+</html>

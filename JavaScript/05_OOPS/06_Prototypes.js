@@ -21,3 +21,19 @@ console.log("adam -> ", adam);
 console.log("Property adam.nationality -> ", adam.nationality);
 adam.greet();
 person.greet();
+
+function printObjectDetails(obj) {
+  console.log("--------------> Details about object are <--------------");
+  //returns all members (instance + prototype)
+  for (var eachProperty in obj) {
+    console.log("obj[", eachProperty, "] :- ", obj[eachProperty]);
+    console.log(
+      "obj.hasOwnProperty(",
+      eachProperty,
+      ") :- ",
+      obj.hasOwnProperty(eachProperty)
+    );
+  }
+}
+
+printObjectDetails(person);

@@ -15,12 +15,12 @@ function Product(price, brand, name, qty) {
   //Private variable - Hide this from outside world
   var availableStock = 10;
 
-    //Private function
-    var productInfo = function () {
-        var finalPrice = price * qty;
-        var info = `${name} of brand ${brand} having quantity ${qty} is worth ${finalPrice}`;
-        console.log(info);
-    };
+  //Private function
+  var productInfo = function () {
+    var finalPrice = price * qty;
+    var info = `${name} of brand ${brand} having quantity ${qty} is worth ${finalPrice}`;
+    console.log(info);
+  };
 }
 
 var samsungMobile = new Product(12000, "Samsung", "M15", 3);

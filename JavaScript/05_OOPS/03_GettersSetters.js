@@ -4,8 +4,10 @@ function Product(price, brand, model) {
   this.brand = brand;
   this.model = model;
 
+  //Private Variable...
   var stocks = 10;
 
+  //Expose a private variable to outside world!
   Object.defineProperty(this, "stks_avail", {
     get: function () { 
       return stocks;

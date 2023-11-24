@@ -1,0 +1,32 @@
+#container {
+  max-width: 400px;
+  margin: 10vh auto 0 auto;
+  box-shadow: 0px 0px 45px 17px rgb(116, 25, 25);
+}
+#display {
+  border: 2px solid red;
+  height: 70px;
+  margin: 5px;
+  font-size: 45px;
+  font-weight: bold;
+  text-align: right;
+
+}
+#buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 5px;
+}
+
+button {
+  border: 0.5px solid #999;
+  line-height: 100px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 40px;
+}
+
+.operators{
+    font-size: 70px;
+    font-weight: bold;
+}

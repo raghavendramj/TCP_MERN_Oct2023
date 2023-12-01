@@ -115,4 +115,78 @@ function practicalReduce() {
     },
   ];
   // Ask -> Sum of the prices of Mobile phones > $100
+
+  //1. All Mobile phones
+  let allMobilesFilter = (prod) => prod.catergory == "Mobile";
+  let moblilesObjs = products.filter(allMobilesFilter);
+  console.log("moblilesObjs :- ", moblilesObjs);
+
+  //2. Mobile phones > 100
+  let mobilesGt100Filter = (prod) => prod.price > 100;
+  let moblilesObjsGt100 = moblilesObjs.filter(mobilesGt100Filter);
+  console.log("moblilesObjsGt100 :- ", moblilesObjsGt100);
+
+  let sumReducer = (a, b) => a + b;
+  let sumOfPrices = moblilesObjsGt100
+    .map((mob) => mob.price)
+    .reduce(sumReducer);
+  console.log("sumOfPrices :- ", sumOfPrices);
+
+  let sumInOnelineEx1 = products
+    .filter((prod) => prod.catergory === "Mobile")
+    .filter((prod) => prod.price > 100)
+    .map((prod) => prod.price)
+    .reduce((acc, cur) => acc + cur);
+  console.log("5. Sum of Mobile Price > 100 sumInOneline :- ", sumInOnelineEx1);
 }
+// practicalReduce();
+
+function sortNumbers() {
+  let numbers = [3, 1, 2, 7, 4, 5, 9, 8];
+  console.log("Before :- ", numbers);
+
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = 0; j < numbers.length; j++) {
+      if (numbers[i] < numbers[j]) {
+        let temp = numbers[i];
+        numbers[i] = numbers[j];
+        numbers[j] = temp;
+      }
+    }
+  }
+  console.log("Using bubble sort :- ", numbers);
+
+  numbers = [3, 1, 2, 7, 4, 5, 9, 8];
+  let ascendingComparator = (a, b) => {
+    //console.log("A -> ", a, " B -> ", b);
+    return a - b;
+  }; //Ascending
+  let descendingComparator = (a, b) => b - a; //Descending
+  console.log(
+    "Using ES6 Features - Ascending :- ",
+    numbers.sort(ascendingComparator)
+  );
+  console.log(
+    "Using ES6 Features - Descending :- ",
+    numbers.sort(descendingComparator)
+  );
+}
+// sortNumbers();
+
+function findFunctions() {
+  let numbers = [3, 1, 2, 7, 4, 5, 9, 8];
+  console.log(
+    "Gt 7 ",
+    numbers.find((num) => num > 7)
+  );
+}
+// findFunctions();
+
+function findFirstFunctions() {
+  let numbers = [3, 1, 3, 1, 2, 7, 8, 9];
+  console.log(
+    "Index of number greater than 7 :- ",
+    numbers.findIndex((num) => num > 7)
+  );
+}
+findFirstFunctions();

@@ -49,30 +49,39 @@ const division = (arr) => {
 
 let arr = [30, 16];
 
- // Elaborative promise chaining
-let firstPromise = add(arr).then(
+// Elaborative promise chaining
+//Addition - First Promise
+let firstPromise = add(arr);
+
+//Subtraction - Second Promise
+let secondPromise = firstPromise.then(
   (successArr) => subtract(successArr),
   (err) => console.log("Error", err)
 );
 
-let secondPromise = firstPromise.then(
+//Multiplication - Third Promise
+let thirdPromise = secondPromise.then(
   (successArr) => multiply(successArr),
   (err) => console.log("Error", err)
 );
 
-let thirdPromise = secondPromise.then(
+//Division - Fourth Promise
+let fourthPromise = thirdPromise.then(
   (successArr) => division(successArr),
   (err) => console.log("Error", err)
 );
 
-
-thirdPromise.then(
-  (successArr) => console.log("Success.... All promises have been completed!", successArr),
+//Handling - Last Promise
+fourthPromise.then(
+  (successArr) =>
+    console.log("Success.... All promises have been completed!", successArr),
   (err) => console.log("Error", err)
 );
 
-
 //One liner promise chaining!
 setTimeout(() => {
-    add(arr).then(subtract).then(division).then(multiply);
+  add(arr)
+  .then(subtract)
+  .then(division)
+  .then(multiply);
 }, 3000);

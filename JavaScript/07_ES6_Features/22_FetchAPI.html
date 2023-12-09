@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Ajax Introduction</title>
+    <script>
+      function fetchAPI() {
+        let backEndURL = "https://jsonplaceholder.typicode.com/posts";
+        let promiseObject = fetch(backEndURL);
+        promiseObject
+          .then((response) => response.json())
+          .then((response) => {
+            console.log("Response :- ", response);
+            appendToHTML(response);
+          });
+      }
+
+      function appendToHTML(parsedArrary) {
+        let postTableStrArr = parsedArrary.map((eachPost) => {
+          return `<tr>
+                        <td>${eachPost.userId}</td>
+                        <td>${eachPost.id}</td>
+                        <td>${eachPost.title}</td>
+                        <td>${eachPost.body}</td>
+                    </tr>`;
+        });
+        let postsHTML = postTableStrArr.join("");
+        document.querySelector("tbody").innerHTML = postsHTML;
+      }
+
+      function fetchPosts() {
+        let backEndURL = "https://jsonplaceholder.typicode.com/posts";
+
+        let xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", backEndURL, true);
+        xmlHttp.send();
+
+        xmlHttp.onreadystatechange = () => {
+          if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+            let postsParsed = JSON.parse(xmlHttp.response);
+            console.log("Response :- ", postsParsed);
+
+            appendToHTML(postsParsed);
+          }
+        };
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Ajax Intro</h1>
+    <p>Fetches data from Backend</p>
+    <button onclick="fetchAPI()">Fetch Back-End Data</button>
+    <table>
+      <thead>
+        <th>UserID</th>
+        <th>ID</th>
+        <th>title</th>
+        <th>body</th>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>

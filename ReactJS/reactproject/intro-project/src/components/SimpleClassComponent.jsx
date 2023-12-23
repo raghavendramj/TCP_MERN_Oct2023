@@ -14,7 +14,6 @@ class MyTestComponent extends Component {
     render() {
         return (
             <div>
-                <h1>This is my Class Component</h1>
                 <table className="table table-striped table-bordered mt-4">
                     <thead className="bg-success text-white">
                         <tr>

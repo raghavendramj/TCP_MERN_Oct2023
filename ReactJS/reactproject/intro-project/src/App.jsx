@@ -4,12 +4,14 @@ import MyTestComponent from "./components/SimpleClassComponent";
 import Header from "./components/SecondClassComponent";
 import StylingInReact from "./components/Styling";
 import SimpleMapMethodDemo from "./components/UsingMapMethod";
-import ThirdClassComponent from "./components/ThirdClassComponent";
+ import FunctionalComponentWithStates from "./components/FuncCompoWIthState";
+import ClassComponentWithStates from "./components/ClassCompWithState";
 
 function App() {
   return <React.Fragment>
     <div className="container mt-4">
-      <ThirdClassComponent />
+      <FunctionalComponentWithStates />
+      {/* <ClassComponentWithStates /> */}
       {/* <SimpleMapMethodDemo /> */}
       {/* <StylingInReact /> */}
       {/* <Header /> */}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class ThirdClassComponent extends Component {
+class ClassComponentWithStates extends Component {
     constructor() {
         super();
         this.state = {
@@ -39,4 +39,4 @@ class ThirdClassComponent extends Component {
     }
 }
 
-export default ThirdClassComponent;
+export default ClassComponentWithStates;

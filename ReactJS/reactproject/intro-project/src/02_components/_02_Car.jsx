@@ -2,7 +2,7 @@ function Car(props) {
     //console.log("Component - 03 Each Car from Props:- ", props.car);
     return (
         <tr>
-            <td>{props.car.id}</td>
+            <td>{props.slNo}</td>
             <td>{props.car.car_brand}</td>
             <td>{props.car.model}</td>
             <td>{props.car.year}</td>

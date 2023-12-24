@@ -21,8 +21,8 @@ function _01_Cars(props) {
                 </thead>
                 <tbody>
                     {
-                        props.cars.map(eachCar => {
-                            return <Car key={eachCar.id} car={eachCar} deleteCarObj={props.onDeleteCar} />
+                        props.cars.map((eachCar, index) => {
+                            return <Car key={eachCar.id} slNo={index+1} car={eachCar} deleteCarObj={props.onDeleteCar} />
                         })
                     }
                 </tbody>

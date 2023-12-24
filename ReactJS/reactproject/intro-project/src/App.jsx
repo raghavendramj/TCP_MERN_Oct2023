@@ -1,23 +1,26 @@
 import React from "react";
-import PhoneDirectory from "./components/PhoneDirectory";
-import MyTestComponent from "./components/SimpleClassComponent";
-import Header from "./components/SecondClassComponent";
-import StylingInReact from "./components/Styling";
-import SimpleMapMethodDemo from "./components/UsingMapMethod";
- import FunctionalComponentWithStates from "./components/FuncCompoWIthState";
-import ClassComponentWithStates from "./components/ClassCompWithState";
+import _01_PhoneDirectory from "./01_components/_01_PhoneDirectory";
+import _02_ClassOrFuncComponent from "./01_components/_02_ClassOrFuncComponent";
+import _03_ClassCompWithStyle from "./01_components/_03_ClassCompWithStyle";
+import _04_FuncCompoWithStyle from "./01_components/_04_FuncCompoWithState";
+import _05_ClassCompWithState from "./01_components/_05_ClassCompWithState";
+import _06_StylingInReactJavaScript from "./01_components/_06_StylingInReactFunc";
+import _07_UsingMapMethod from "./01_components/_07_UsingMapMethod";
+import _01_PropsExample from "./02_components/_01_PropsExample";
 
 function App() {
+
   return <React.Fragment>
     <div className="container mt-4">
-      <FunctionalComponentWithStates />
-      {/* <ClassComponentWithStates /> */}
-      {/* <SimpleMapMethodDemo /> */}
-      {/* <StylingInReact /> */}
-      {/* <Header /> */}
-      {/* <PhoneDirectory myName="Raghav" />  */}
-      {/* <MyTestComponent /> */}
-
+      {/* <_01_PhoneDirectory />
+      <_02_ClassOrFuncComponent />
+      <_03_ClassCompWithStyle />
+      <_04_FuncCompoWithStyle />
+      <_05_ClassCompWithState />
+      <_06_StylingInReactJavaScript />
+      <_07_UsingMapMethod />
+       */}
+      <_01_PropsExample />
     </div>
   </React.Fragment>;
 }

@@ -1,7 +1,7 @@
 // import { Component } from "react";
 
 //Class Component! - Statefull
-// class Header extends Component {
+// class _02_HeaderClass extends Component {
 //     constructor() {
 //         super();
 //         this.state = {}
@@ -16,10 +16,10 @@
 //     }
 // }
 
-// export default Header;
+// export default _02_HeaderClass;
 
 //Functional Component! - Stateless
-function Header() {
+function _02_HeaderFunc() {
     return (
         <div className="container p-4 mt-3 text-center bg-primary text-white h1">
             Phone Directory!
@@ -27,4 +27,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default _02_HeaderFunc;

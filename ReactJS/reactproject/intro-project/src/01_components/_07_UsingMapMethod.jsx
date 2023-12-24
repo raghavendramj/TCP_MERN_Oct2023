@@ -1,4 +1,4 @@
-function SimpleMapMethodDemo() {
+function _07_UsingMapMethod() {
     const people = [
         {
             "name": "John Doe",
@@ -61,5 +61,4 @@ function SimpleMapMethodDemo() {
     );
 }
 
-export default SimpleMapMethodDemo
-    ;
+export default _07_UsingMapMethod;

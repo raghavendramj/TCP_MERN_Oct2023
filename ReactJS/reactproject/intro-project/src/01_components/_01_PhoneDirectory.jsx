@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const PhoneDirectory = ({myName}) => {
+const _01_PhoneDirectory = ({ myName }) => {
     console.log("Name :-", myName);
 
     //State Variable
@@ -89,4 +89,4 @@ const PhoneDirectory = ({myName}) => {
     );
 }
 
-export default PhoneDirectory;
+export default _01_PhoneDirectory;

@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-class MyTestComponent extends Component {
+class _05_ClassCompWithState extends Component {
     constructor() {
         super();
         this.state = {
@@ -37,4 +37,4 @@ class MyTestComponent extends Component {
     }
 }
 
-export default MyTestComponent;
+export default _05_ClassCompWithState;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function FunctionalComponentWithStates() {
+function _04_FuncCompoWithStyle() {
 
     const [myStyle, setMyStyle] = useState(
         {
@@ -34,4 +34,4 @@ function FunctionalComponentWithStates() {
         </React.Fragment>);
 }
 
-export default FunctionalComponentWithStates;
+export default _04_FuncCompoWithStyle;

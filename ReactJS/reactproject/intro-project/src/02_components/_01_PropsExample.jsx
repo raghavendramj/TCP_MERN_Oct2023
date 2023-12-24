@@ -1,7 +1,7 @@
+import { useState } from "react";
 import _01_Cars from "./_01_Cars";
 
 function _01_PropsExample(props) {
-
     const carsArr = [
         {
             "id": 1,
@@ -44,8 +44,18 @@ function _01_PropsExample(props) {
             "horsepower": 158
         }
     ]
+
+    const [cars, setCars] = useState(carsArr);
+
+    const deleteCar = (car) => {
+        console.log("Reached Delete Car Method ", car);
+        let currentCars = [...cars]; //Take a copy
+        currentCars = currentCars.filter(eachCar => eachCar.id != car.id);
+        setCars(currentCars);
+    }
+    
     return (
-        <_01_Cars cars={carsArr} />
+        <_01_Cars cars={cars} onDeleteCar={deleteCar} />
     );
 }
 

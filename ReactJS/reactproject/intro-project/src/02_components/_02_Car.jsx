@@ -1,5 +1,5 @@
 function Car(props) {
-    console.log("Component - 03 Each Car from Props:- ", props.car);
+    //console.log("Component - 03 Each Car from Props:- ", props.car);
     return (
         <tr>
             <td>{props.car.id}</td>
@@ -8,6 +8,7 @@ function Car(props) {
             <td>{props.car.year}</td>
             <td>{props.car.fuel_type}</td>
             <td>{props.car.horsepower}</td>
+            <td><button className="btn btn-danger" onClick={() => props.deleteCarObj(props.car)}>Delete</button></td>
         </tr>
     );
 }

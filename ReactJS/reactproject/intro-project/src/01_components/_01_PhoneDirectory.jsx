@@ -21,9 +21,7 @@ const _01_PhoneDirectory = ({ myName }) => {
 
     //Event Handler!
     const handleDelete = () => {
-
     }
-
 
     //State Variable
     const [newEntry, setNewEntry] = useState({ name: '', phone: '' });

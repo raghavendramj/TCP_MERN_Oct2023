@@ -7,9 +7,9 @@ function _01_Cars(props) {
             <div className="container-fluid m-2 p-3 text-white bg-primary text-center">
                 <h1>Props - Cars Example!</h1>
             </div>
-            <table className="table table-striped">
+            <table className="table table-striped table-bordered">
                 <thead className="table-danger">
-                    <tr >
+                    <tr className="h5 text-center">
                         <th>Sl.No</th>
                         <th>Brand</th>
                         <th>Model</th>

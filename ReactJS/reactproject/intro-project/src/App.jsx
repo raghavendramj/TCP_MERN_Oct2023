@@ -8,6 +8,7 @@ import _06_StylingInReactJavaScript from "./01_components/_06_StylingInReactFunc
 import _07_UsingMapMethod from "./01_components/_07_UsingMapMethod";
 import _01_PropsExample from "./02_components/_01_PropsExample";
 import _01_PropsWithClassComp from "./02_components/_01_PropsWithCalssComp";
+import _01_Routers from "./03_Routers/_01_Routers"
 
 function App() {
 
@@ -20,9 +21,10 @@ function App() {
       <_05_ClassCompWithState />
       <_06_StylingInReactJavaScript />
       <_07_UsingMapMethod />
-       */}
-      {/* <_01_PropsExample /> */}
+      <_01_PropsExample /> 
       <_01_PropsWithClassComp />
+       */}  
+      <_01_Routers />
     </div>
   </React.Fragment>;
 }

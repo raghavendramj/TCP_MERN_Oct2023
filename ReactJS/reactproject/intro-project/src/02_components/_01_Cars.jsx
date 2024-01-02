@@ -1,12 +1,11 @@
 import Car from "./_02_Car";
+import _01_Header from "./_01_Header";
 
 function _01_Cars(props) {
     //console.log("Component - 02 Cars Array :- ", props.onDeleteCar);
     return (
         <div className="container m-3">
-            <div className="container-fluid m-2 p-3 text-white bg-primary text-center">
-                <h1>Props - Cars Example!</h1>
-            </div>
+            <_01_Header />
             <table className="table table-striped table-bordered">
                 <thead className="table-danger">
                     <tr className="h5 text-center">
@@ -22,7 +21,7 @@ function _01_Cars(props) {
                 <tbody>
                     {
                         props.cars.map((eachCar, index) => {
-                            return <Car key={eachCar.id} slNo={index+1} car={eachCar} deleteCarObj={props.onDeleteCar} />
+                            return <Car key={eachCar.id} slNo={index + 1} car={eachCar} deleteCarObj={props.onDeleteCar} />
                         })
                     }
                 </tbody>

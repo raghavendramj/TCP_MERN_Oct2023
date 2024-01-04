@@ -9,6 +9,7 @@ import _07_UsingMapMethod from "./01_components/_07_UsingMapMethod";
 import _01_PropsExample from "./02_components/_01_PropsExample";
 import _01_PropsWithClassComp from "./02_components/_01_PropsWithCalssComp";
 import _01_Routers from "./03_Routers/_01_Routers"
+import NavRouterLayout from "./03_Routers/_02_NavRouters";
 
 function App() {
 
@@ -23,7 +24,8 @@ function App() {
       <_07_UsingMapMethod />
       <_01_PropsExample /> 
       <_01_PropsWithClassComp />
-       */}  
+       */} 
+      <NavRouterLayout />
       <_01_Routers />
     </div>
   </React.Fragment>;

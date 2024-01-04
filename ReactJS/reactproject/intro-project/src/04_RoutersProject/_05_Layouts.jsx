@@ -5,11 +5,11 @@ import ItemRouters from "./_01_AllRouters";
 function ItemsLayout() {
     return (
         <>   
-            <ul class="nav">
-                <li class="nav-item">
+            <ul className="nav">
+                <li className="nav-item">
                     <Link to="/items" ><button className="btn btn-primary m-2">Show Items</button></Link>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                     <Link to="/add"><button className="btn btn-secondary m-2">Add New Item</button></Link>
                 </li>
             </ul>

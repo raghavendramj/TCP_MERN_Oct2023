@@ -3,6 +3,7 @@ function ItemHeader(props) {
     return (
         <div className={headerStyle}>
             <h1>{props.text}</h1>
+            {props.subText ? <h4 className="text-success">{props.subText}</h4> : <></>}
         </div>
     );
 }

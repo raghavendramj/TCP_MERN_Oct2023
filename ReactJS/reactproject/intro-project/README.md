@@ -78,3 +78,80 @@ Smart vs Dumb Components
     Components can be classified into two categories based on their roles in the application: smart and dumb. This is done to avoid any mismanagement in the state of the application
     A dumb (also known as presentational) component is a UI-based component that only presents data on the DOM. On the other hand, a smart (also known as container) component provides data and logic to dumb components
     Thus, dumb components describe the appearance of things, whereas smart components describe the working of things
+
+There are two different ways to define components in React:
+    Class-based components
+        Stateful
+        Access to lifecycle hooks
+    Functional components
+        Stateless
+        Pure functions; hence, no lifecycle hooks
+
+
+Class Component - Example:-
+
+class MyCounter extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            count: props.count
+        };
+    }
+    onCounterClick = () => {
+        this.setState({
+            count: this.state.count + 1
+        });
+    }
+    render() {
+        return <div onClick={this.onCounterClick}>
+            {this.state.count}
+        </div>;
+    }
+}
+<MyCounter count={0} />
+
+The answer is ‘hooks’.
+    Hooks are functions that let you ‘hook into’ the React state and lifecycle features of class components (not to be confused with React lifecycle hooks!)
+
+
+function MyCounter(props) {
+    const [count, setCount] = React.useState(0);
+    const onCounterClick = () => setCount(count + 1);
+
+    return <div onClick={onCounterClick}>
+        {props.count}
+    </div>;
+}
+
+Question :- Functional components in React essentially comprise just the render method ?
+True [Answer]
+False
+
+React Hooks :- 
+    Hooks are a new addition in React version 16.8
+    Hooks allow using lifecycle methods and state in pure functional components without using class, leading to cleaner and more manageable code with good separation of business logic concerns
+    Hooks are themselves functions provided either by the React library (built-in) or created by you
+    Their use is optional. There are no plans to remove support for class-based components from React
+    100% backward-compatible and do not introduce any breaking changes
+
+Why Hooks?
+The release of hooks in React 16.8 solved the following pain points:
+    Managing State: Reusing logic between multiple components can lead to wrapper hell or deeply nested components
+    Side Effects: Unrelated mixed in logic in lifecycle methods can get repetitive, and cause unnecessary side effects
+    Optimization: Hooks might reduce your bundle size
+
+1. useState hook
+
+The useState is a React Hook that can be called inside a function component to add some local state to it
+React will preserve this state between re-renders 
+useState returns a pair: The current state value and a function that lets you update it. You can call the updater from an event handler or anywhere else
+The only argument to useState is the initial state. The initial state argument is only used during the first render
+
+Note: You will learn more about the useState hook and its implementation in the next session.
+
+
+React Router is a library used to handle routing within a React application
+Its primary components include:
+    Routers: <BrowserRouter>, <HashRouter>
+    Route Matchers: <Route>, <Switch>
+    Navigation: <Link>, <NavLink>, <Redirect>

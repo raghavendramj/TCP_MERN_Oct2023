@@ -1,6 +1,7 @@
 import ItemHeader from "./_04_ItemHeader";
 
 function AddNewItem(props) { 
+    console.log("props.newProd :- ", props.newProd);
     return (
         <>
             <ItemHeader text="Add New Product!" subText="Fill all the product details..." contextColor="warning" textColor="text-dark" />

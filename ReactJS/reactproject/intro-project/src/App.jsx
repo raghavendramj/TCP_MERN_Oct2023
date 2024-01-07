@@ -8,10 +8,11 @@ import _06_StylingInReactJavaScript from "./01_components/_06_StylingInReactFunc
 import _07_UsingMapMethod from "./01_components/_07_UsingMapMethod";
 import _01_PropsExample from "./02_components/_01_PropsExample";
 import _01_PropsWithClassComp from "./02_components/_01_PropsWithCalssComp";
-import _01_Routers from "./03_Routers/_01_Routers" 
+import _01_Routers from "./03_Routers/_01_Routers"
 import ItemRouters from "./04_RoutersProject/_01_AllRouters";
 import ShowItems from "./04_RoutersProject/_02_ShowItems";
 import ItemsLayout from "./04_RoutersProject/_05_Layouts";
+import ReactRouterHook from "./05_RouterHooks/_01_RouterHooks";
 
 function App() {
 
@@ -30,11 +31,10 @@ function App() {
       <NavRouterLayout />
       <_01_Routers />
 
-      
+       <ReactRouterHook /> 
        */}
 
-      
-       <ItemsLayout />
+      <ItemsLayout />
     </div>
   </React.Fragment>;
 }

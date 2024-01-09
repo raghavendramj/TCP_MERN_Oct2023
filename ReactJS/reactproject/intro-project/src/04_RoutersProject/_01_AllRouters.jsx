@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import ShowItems from "./_02_ShowItems";
 import AddNewItem from "./_06_AddNewItem";
 import { useState } from "react";
@@ -36,15 +36,19 @@ function ItemRouters() {
 
     const [products, setProducts] = useState(productsArr);
     const [newProduct, setNewProduct] = useState({ name: '', price: '', category: '' });
-    const [currentProduct, setCurrentProduct] = useState({});
+
+    const navigate = useNavigate();
 
     const handleEntry = (e) => {
         e.preventDefault();
-        const newId = products.length + 1;
+        const newId = Math.floor(Math.random() * 9000) + 1000;
         setProducts([...products, { id: newId, ...newProduct }]);
 
         //Clear Form Fields!
         setNewProduct({ name: '', price: '', category: '' });
+
+        // Redirect to the product list or any other desired page
+        navigate('/items');
     }
 
     //Event Handler!
@@ -56,14 +60,6 @@ function ItemRouters() {
         setNewProduct((prevProduct) => ({ ...prevProduct, [name]: value }))
     }
 
-    //Event Handler!
-    const handleEditInputChange = (e) => {        const { name, value } = e.target;
-        console.log("handleEditInputChange e.target :- ", e.target);
-        console.log("handleEditInputChange inputField :- ", name);
-        console.log("handleEditInputChange value :- ", value);
-        setNewProduct((prevProduct) => ({ ...prevProduct, [name]: value }))
-    }
-
     const deleteProduct = (product) => {
         console.log("deleteProduct -> ", product);
         let curProds = [...products]; //Take a copy!
@@ -71,24 +67,21 @@ function ItemRouters() {
         setProducts(filteredProds);
     }
 
-    const handleEdit = (e) => {
-        e.preventDefault();
-        console.log("edited product -> ", e);
-
-        //Clear Form Fields!
-        setCurrentProduct({});
-    }
-
     return (
         <Routes>
             <Route path="/items" element={<ShowItems products={products} deleteProduct={deleteProduct} />}></Route>
-            <Route path="/add" element={<AddNewItem handleEntry={handleEntry} handleInputChange={handleInputChange} newProd={newProduct} />}></Route>
-            <Route path="/item/:itemid" element={<EditItem products={products}
-                handleEdit={handleEdit}
-                currentProduct={currentProduct}
-                setCurrentProduct={setCurrentProduct}
-                handleEditInputChange={handleEditInputChange} 
+            <Route path="/add" element={
+                <AddNewItem
+                    handleEntry={handleEntry}
+                    handleInputChange={handleInputChange}
+                    newProd={newProduct}
                 />}></Route>
+            <Route path="/item/:itemid" element={
+                <EditItem
+                    products={products}
+                    setProducts={setProducts}
+                />
+            }></Route>
             <Route path="*" element={<PageNotFound />}></Route>
         </Routes>
     );

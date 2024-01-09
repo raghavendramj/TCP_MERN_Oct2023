@@ -35,10 +35,10 @@ function ItemRouters() {
     ]
 
     const [products, setProducts] = useState(productsArr);
-    const [newProduct, setNewProduct] = useState({ name: '', price: '', category: '' });
+    const [newProduct, setNewProduct] = useState({ name: '', price: '', category: '' });   
+    const isSubmitDisabled = !newProduct.name || !newProduct.price || !newProduct.category; 
 
-    const navigate = useNavigate();
-
+    const navigate = useNavigate(); 
     const handleEntry = (e) => {
         e.preventDefault();
         const newId = Math.floor(Math.random() * 9000) + 1000;
@@ -74,7 +74,8 @@ function ItemRouters() {
                 <AddNewItem
                     handleEntry={handleEntry}
                     handleInputChange={handleInputChange}
-                    newProd={newProduct}
+                    newProd={newProduct} 
+                    isSubmitDisabled={isSubmitDisabled}
                 />}></Route>
             <Route path="/item/:itemid" element={
                 <EditItem

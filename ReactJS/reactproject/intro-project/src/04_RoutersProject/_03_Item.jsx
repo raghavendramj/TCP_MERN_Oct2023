@@ -12,8 +12,8 @@ function Item(props) {
             <td>{props.item.price}</td>
             <td>{props.item.category}</td>
             <td>
-                <button className="btn btn-danger" onClick={() => props.deleteProduct(props.item)}>Delete {props.item.name}</button>
-                <Link to={toLink}><button className="btn btn-secondary m-2">Edit {props.item.name}</button></Link>
+                <button className="btn btn-danger" onClick={() => props.deleteProduct(props.item)}>Delete </button>
+                <Link to={toLink}><button className="btn btn-warning m-2">Edit </button></Link>
             </td>
         </tr>
     );

@@ -9,6 +9,8 @@ function Editproduct({ products, setProducts }) {
 
     const [editedProduct, setEditedProduct] = useState({});
 
+    const isSaveDisabled = !editedProduct.name || !editedProduct.price || !editedProduct.category;
+
     useEffect(() => {
         const productToEdit = products.find((product) => String(product.id) === productId);
         setEditedProduct(productToEdit || {});
@@ -18,7 +20,7 @@ function Editproduct({ products, setProducts }) {
 
     const handleEditInputChange = (e) => {
         // Update the editedProduct state as the user types the content!
-        const { name, value } = e.target; 
+        const { name, value } = e.target;
         setEditedProduct((prevProduct) => ({
             ...prevProduct,
             [name]: value,
@@ -58,7 +60,7 @@ function Editproduct({ products, setProducts }) {
                     <input type="text" name="category" className="form-control" placeholder="Product Category" value={editedProduct.category} onChange={handleEditInputChange}></input>
                 </div>
                 <div className="form group mt-3">
-                    <button className="btn btn-primary m-2">Save Changes</button>
+                    <button className="btn btn-primary m-2" disabled={isSaveDisabled}>Save Changes</button>
                     <button className="btn btn-secondary m-2">Clear Fields</button>
                 </div>
             </form>

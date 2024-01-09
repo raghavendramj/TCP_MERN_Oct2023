@@ -1,6 +1,6 @@
 import ItemHeader from "./_04_ItemHeader";
 
-function AddNewItem(props) { 
+function AddNewItem(props) {
     console.log("props.newProd :- ", props.newProd);
     return (
         <>
@@ -19,7 +19,7 @@ function AddNewItem(props) {
                     <input type="text" name="category" className="form-control" placeholder="Product Category" value={props.newProd.category} onChange={props.handleInputChange}></input>
                 </div>
                 <div className="form group mt-3">
-                    <button className="btn btn-primary m-2">Add New Product!</button>
+                    <button className="btn btn-primary m-2" disabled={props.isSubmitDisabled} >Add New Product!</button>
                     <button className="btn btn-secondary m-2">Clear Fields</button>
                 </div>
             </form>

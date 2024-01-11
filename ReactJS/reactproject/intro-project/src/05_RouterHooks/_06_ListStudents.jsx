@@ -1,16 +1,19 @@
 import React, { useContext } from 'react';
-import Student from "./_07_Student"; 
+import { useAllData } from './_08_StudentContext';
+import Student from './_07_Student';
 
 function ListStudents() {
 
-    const StudentContext = useContext(StudentContext);
+    const dataObj = useAllData();
+    console.log("Context Data  -> ", dataObj);
+    const students = dataObj.loadStudentsFn();
 
-    
+
     // console.log("Students :- ", students);
     return (
         <div className="container m-3">
             <h1>Testing</h1>
-            {/* <table className="table table-striped table-bordered">
+            <table className="table table-striped table-bordered">
                 <thead className="table-danger">
                     <tr className="h5 text-center">
                         <th>Sl.No</th>
@@ -28,7 +31,7 @@ function ListStudents() {
                         })
                     }
                 </tbody>
-            </table> */}
+            </table>
         </div>
     );
 }

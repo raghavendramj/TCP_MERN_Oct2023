@@ -32,5 +32,107 @@
       "hobbies": ["cooking", "traveling"],
       "club_membership": "Travel Club"
     }
+  ],
+  "people": [
+    {
+      "name": "John Doe",
+      "phone": "+1234567890",
+      "id": 1,
+      "email": "john.doe@example.com"
+    },
+    {
+      "name": "Jane Smith",
+      "phone": "+9876543210",
+      "id": 2,
+      "email": "jane.smith@example.com"
+    },
+    {
+      "name": "Bob Johnson",
+      "phone": "+1122334455",
+      "id": 3,
+      "email": "bob.johnson@example.com"
+    },
+    {
+      "name": "Alice Brown",
+      "phone": "+5544332211",
+      "id": 4,
+      "email": "alice.brown@example.com"
+    },
+    {
+      "name": "Charlie Wilson",
+      "phone": "+6677889900",
+      "id": 5,
+      "email": "charlie.wilson@example.com"
+    }
+  ],
+
+  "cars": [
+    {
+      "id": 1,
+      "car_brand": "Toyota",
+      "model": "Camry",
+      "year": 2022,
+      "fuel_type": "Gasoline",
+      "horsepower": 203
+    },
+    {
+      "id": 2,
+      "car_brand": "Ford",
+      "model": "Mustang",
+      "year": 2023,
+      "fuel_type": "Petrol",
+      "horsepower": 450
+    },
+    {
+      "id": 3,
+      "car_brand": "Tesla",
+      "model": "Model 3",
+      "year": 2022,
+      "fuel_type": "Electric",
+      "horsepower": 283
+    },
+    {
+      "id": 4,
+      "car_brand": "Chevrolet",
+      "model": "Equinox",
+      "year": 2023,
+      "fuel_type": "Hybrid",
+      "horsepower": 260
+    },
+    {
+      "id": 5,
+      "car_brand": "Honda",
+      "model": "Civic",
+      "year": 2022,
+      "fuel_type": "Gasoline",
+      "horsepower": 158
+    }
+  ],
+
+  "products": [
+    {
+      "id": 3814,
+      "name": "Phone",
+      "price": 499.99,
+      "category": "Electronics"
+    },
+    {
+      "id": 6927,
+      "name": "Shirt",
+      "price": 19.99,
+      "category": "Clothing"
+    },
+    {
+      "id": 2056,
+      "name": "Coffee Maker",
+      "price": 79.99,
+      "category": "Home and Garden"
+    },
+    {
+      "id": 8492,
+      "name": "Running Shoes",
+      "price": 89.99,
+      "category": "Sports and Outdoors"
+    }
   ]
 }

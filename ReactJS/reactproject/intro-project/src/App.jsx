@@ -13,25 +13,16 @@ import ItemRouters from "./04_RoutersProject/_01_AllRouters";
 import ShowItems from "./04_RoutersProject/_02_ShowItems";
 import ItemsLayout from "./04_RoutersProject/_05_Layouts";
 import ReactRouterHook from "./05_RouterHooks/_01_RouterHooks";
-import Timer from "./05_RouterHooks/_04_UseEffect";
-import allData from "./05_RouterHooks/_05_Data";
+import Timer from "./05_RouterHooks/_04_UseEffect"; 
 import ListStudents from "./05_RouterHooks/_06_ListStudents";
-
-
-// Step 1
-export const StudentContext = React.createContext(null);
-
-// Step 2 
-console.log("allData -> ", allData);
-
+import StudentsProvider from "./05_RouterHooks/_08_StudentContext";
 
 function App() {
-
   return <React.Fragment>
     <div className="container mt-4">
-      <StudentContext.Provider value={allData}>
+      <StudentsProvider>
         <ListStudents />
-      </StudentContext.Provider>
+      </StudentsProvider> 
     </div>
   </React.Fragment>;
 

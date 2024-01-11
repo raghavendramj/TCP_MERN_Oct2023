@@ -1,0 +1,36 @@
+{
+  "students": [
+    {
+      "id": 1234,
+      "name": "Alice",
+      "age": 18,
+      "grade": "A",
+      "hobbies": ["reading", "coding"],
+      "club_membership": "Chess Club"
+    },
+    {
+      "id": 5678,
+      "name": "Bob",
+      "age": 17,
+      "grade": "B",
+      "hobbies": ["sports", "music"],
+      "club_membership": "Science Club"
+    },
+    {
+      "id": 9012,
+      "name": "Charlie",
+      "age": 16,
+      "grade": "C",
+      "hobbies": ["drawing", "gaming"],
+      "club_membership": "Art Club"
+    },
+    {
+      "id": 3456,
+      "name": "David",
+      "age": 19,
+      "grade": "B+",
+      "hobbies": ["cooking", "traveling"],
+      "club_membership": "Travel Club"
+    }
+  ]
+}

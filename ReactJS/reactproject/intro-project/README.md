@@ -155,3 +155,28 @@ Its primary components include:
     Routers: <BrowserRouter>, <HashRouter>
     Route Matchers: <Route>, <Switch>
     Navigation: <Link>, <NavLink>, <Redirect>
+
+With the help of useEffect Hook, one can perform ‘side-effects’ in functional React components.
+    Examples of side-effects include (but are not limited to):
+        Fetching data from an API
+        Subscribing to events
+        Direct DOM manipulation
+
+
+
+useEffect 
+1. No dependency passed:
+useEffect(() => {
+  //Runs on every render
+});
+
+2. An empty array:
+useEffect(() => {
+  //Runs only on the first render
+}, []);
+
+3. Props or state values:
+useEffect(() => {
+  //Runs on the first render
+  //And any time any dependency value changes
+}, [prop, state]);

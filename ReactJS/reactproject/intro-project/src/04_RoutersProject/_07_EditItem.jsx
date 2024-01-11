@@ -11,6 +11,10 @@ function Editproduct({ products, setProducts }) {
 
     const isSaveDisabled = !editedProduct.name || !editedProduct.price || !editedProduct.category;
 
+
+    //Case 3:- 3. Props or state values:
+    //Runs on the first render
+    //And any time any dependency value(productId, products) changes 
     useEffect(() => {
         const productToEdit = products.find((product) => String(product.id) === productId);
         setEditedProduct(productToEdit || {});

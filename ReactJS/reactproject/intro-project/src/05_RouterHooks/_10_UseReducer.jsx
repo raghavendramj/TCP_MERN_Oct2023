@@ -2,7 +2,7 @@ import { useReducer } from 'react';
 import jsonData from './_05_Data.json';
 import ComponentHeader from './_00_ComponentHeader';
 
-function UseReducerExample() { 
+function UseReducerExample() {
 
     const todosReducer = (state, action) => {
         console.log("state -> ", state);
@@ -32,18 +32,19 @@ function UseReducerExample() {
 
     return (
         <div className="container">
-            <ComponentHeader headerText="UseReducer Example" headerBgColor="success" />
+            <ComponentHeader headerText="UseReducer Example" headerBgColor="info" />
             {todos.map((todo) => {
-                return <div key={todo.id} >
-                    <label>
-                        <input type="checkbox"
-                            checked={todo.complete}
-                            onChange={() => handleOnChange(todo)} />
+                return <div className="form-check" key={todo.id}>
+                    <input className="form-check-input"
+                        type="checkbox"
+                        onChange={() => handleOnChange(todo)}
+                        checked={todo.complete} />
+                    <label className="form-check-label">
                         {todo.task}
                     </label>
                 </div>
             })}
-        </div >
+        </div>
 
     );
 }

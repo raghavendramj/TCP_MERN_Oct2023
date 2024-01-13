@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import jsonData from './_05_Data.json';
 import ComponentHeader from './_00_ComponentHeader';
 
@@ -23,7 +23,7 @@ function UseMemoExample() {
 
     const increment = () => {
         setCount(count => count + 1);
-    } 
+    }
 
     const expensiveCalculation = (num) => {
         console.log("Calculating...");
@@ -32,7 +32,10 @@ function UseMemoExample() {
         }
         return num;
     }
-    const calculation = expensiveCalculation(count);
+    const calculation = useMemo(() => {
+        console.log("Calculation function!");
+        return expensiveCalculation(count);
+    }, [count]);
 
     return (
         <div className="container">

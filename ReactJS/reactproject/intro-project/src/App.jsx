@@ -17,10 +17,12 @@ import Timer from "./05_RouterHooks/_04_UseEffect";
 import ListStudents from "./05_RouterHooks/_06_ListStudents";
 import StudentsProvider from "./05_RouterHooks/_08_StudentContext";
 import UseRefHookFormExample from "./05_RouterHooks/_09_UseReHook";
+import UseReducerExample from "./05_RouterHooks/_10_UseReducer";
 
 function App() {
   return <React.Fragment>
-    <UseRefHookFormExample />
+    {/* <UseRefHookFormExample /> */}
+    <UseReducerExample />
   </React.Fragment>
 
 

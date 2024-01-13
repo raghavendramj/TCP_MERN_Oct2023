@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
 import jsonData from "./_05_Data.json";
 
-const StudentContext = React.createContext();
-
-
+const StudentContext = React.createContext();  
 export function useAllData() {
     return useContext(StudentContext);
 }

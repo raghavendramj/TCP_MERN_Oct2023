@@ -1,18 +1,19 @@
 import React, { useContext } from 'react';
 import { useAllData } from './_08_StudentContext';
 import Student from './_07_Student';
+import ComponentHeader from './_00_ComponentHeader';
 
-function ListStudents() {
-
+function ListStudents() { 
     const dataObj = useAllData();
     console.log("Context Data  -> ", dataObj);
-    const students = dataObj.loadStudentsFn();
-
-
-    // console.log("Students :- ", students);
+    const students = dataObj.loadStudentsFn(); 
     return (
-        <div className="container m-3">
-            <h1>Testing</h1>
+        <div className="container m-3"> 
+            <ComponentHeader 
+            headerText="List Of Students" 
+            headerBgColor="info"
+            subHeaderText="Displaying List of Students!"
+            />
             <table className="table table-striped table-bordered">
                 <thead className="table-danger">
                     <tr className="h5 text-center">

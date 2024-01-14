@@ -19,13 +19,17 @@ import StudentsProvider from "./05_RouterHooks/_08_StudentContext";
 import UseRefHookFormExample from "./05_RouterHooks/_09_UseReHook";
 import UseReducerExample from "./05_RouterHooks/_10_UseReducer";
 import UseMemoExample from "./05_RouterHooks/_11_UseMemo";
+import UsecallbackExample from "./05_RouterHooks/_12_UseCalback";
 
 function App() {
   return <React.Fragment>
-    {/* <UseRefHookFormExample /> */}
-    {/* <UseReducerExample /> */
-    <UseMemoExample />}
-  </React.Fragment>  
+    {/* 
+        <UseRefHookFormExample /> 
+        <UseReducerExample />
+        <UseMemoExample />
+    */}
+    <UsecallbackExample />
+  </React.Fragment>
 
 
   {/*    return <React.Fragment>

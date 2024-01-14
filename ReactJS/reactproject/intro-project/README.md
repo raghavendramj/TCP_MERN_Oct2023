@@ -180,3 +180,9 @@ useEffect(() => {
   //Runs on the first render
   //And any time any dependency value changes
 }, [prop, state]);
+
+
+
+//Usecase :- fetch the data from 
+https://jsonplaceholder.typicode.com/todos
+and display it in table.

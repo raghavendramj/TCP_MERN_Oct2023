@@ -20,6 +20,7 @@ import UseRefHookFormExample from "./05_RouterHooks/_09_UseReHook";
 import UseReducerExample from "./05_RouterHooks/_10_UseReducer";
 import UseMemoExample from "./05_RouterHooks/_11_UseMemo";
 import UsecallbackExample from "./05_RouterHooks/_12_UseCalback";
+import CustomHook from "./05_RouterHooks/_14_CustomHook";
 
 function App() {
   return <React.Fragment>
@@ -27,8 +28,9 @@ function App() {
         <UseRefHookFormExample /> 
         <UseReducerExample />
         <UseMemoExample />
+      <UsecallbackExample /> 
     */}
-    <UsecallbackExample /> 
+    <CustomHook />
   </React.Fragment>
 
 

@@ -1,6 +1,20 @@
-function Todos({ todos, addTodo, handleInputChange, newTodo }) {
+import { memo, useState } from "react";
+
+const Todos = ({ todos, addTodo }) => {
 
     console.log("Todos component is rendered!");
+    const [newTodo, setNewTodo] = useState("");
+    const handleInputChange = (e) => {
+        console.log("e.target.name -> ", e.target.name);
+        console.log("e.target.value -> ", e.target.value);
+        setNewTodo(e.target.value);
+    }
+
+    const handleNewTodo = () => {
+        addTodo(newTodo);
+        setNewTodo("");
+    }
+
     return (
         <div className="container">
             {todos.map((todo, index) => {
@@ -18,7 +32,7 @@ function Todos({ todos, addTodo, handleInputChange, newTodo }) {
                 <label className="form-check-label">
                     <button
                         className='btn btn-primary mt-3'
-                        onClick={addTodo}
+                        onClick={handleNewTodo}
                         disabled={!newTodo}>
                         Add New Todo
                     </button>
@@ -29,4 +43,4 @@ function Todos({ todos, addTodo, handleInputChange, newTodo }) {
     );
 }
 
-export default Todos;
+export default memo(Todos);

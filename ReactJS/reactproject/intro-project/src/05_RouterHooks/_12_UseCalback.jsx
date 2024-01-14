@@ -6,21 +6,12 @@ import ComponentHeader from "./_00_ComponentHeader";
 function UsecallbackExample() {
 
     const [todos, setTodos] = useState(jsonData.todos.map(todo => todo.task));
-    const [newTodo, setNewTodo] = useState("");
-
     const [count, setCount] = useState(0);
 
-    const addTodo = useCallback(() => {
+    const addTodo = useCallback((newTodo) => {
         console.log("newTodo -> ", newTodo);
         setTodos([...todos, newTodo]);
-        setNewTodo("");
     }, [todos]);
-
-    const handleInputChange = (e) => {
-        console.log("e.target.name -> ", e.target.name);
-        console.log("e.target.value -> ", e.target.value);
-        setNewTodo(e.target.value);
-    }
 
     const increment = () => {
         setCount(count => count + 1);
@@ -31,9 +22,7 @@ function UsecallbackExample() {
             <ComponentHeader headerText="Use CallbackExample Example" headerBgColor="info" />
             <Todos
                 todos={todos}
-                addTodo={addTodo}
-                handleInputChange={handleInputChange}
-                newTodo={newTodo}
+                addTodo={addTodo} 
             />
             <hr />
             <div>

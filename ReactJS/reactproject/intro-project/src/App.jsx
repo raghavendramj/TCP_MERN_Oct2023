@@ -28,7 +28,7 @@ function App() {
         <UseReducerExample />
         <UseMemoExample />
     */}
-    <UsecallbackExample />
+    <UsecallbackExample /> 
   </React.Fragment>
 
 

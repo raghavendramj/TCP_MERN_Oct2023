@@ -4,13 +4,35 @@ import ComponentHeader from "./_00_ComponentHeader";
 function CustomHook() {
 
     const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
+    let [todosData, setTodosData] = useState(data);
+    useEffect(() => {
+        setTodosData(data);
+    }, [data]);
+
+    const handleInputChange = (e) => {
+        const changedData = e.target;
+        console.log("Data name :- ", changedData.name);
+        console.log("Data checked :- ", changedData.checked);
+        console.log("Data value :- ", JSON.parse(changedData.value));
+        const { id, userId } = JSON.parse(changedData.value);
+
+        todosData = todosData.map(todo => {
+            if (todo.id === id && todo.userId === userId) {
+                return { ...todo, completed: changedData.checked };
+            } else {
+                return todo;
+            }
+        });
+        setTodosData(todosData);
+    }
+
     return (
         <div className="container">
             <ComponentHeader headerText="Custom Hook Example" headerBgColor="info" subHeaderText="useFetch where its trying to fetch the data from backend" />
 
-            <table className="table">
+            <table className="table table-striped stable-bordered">
                 <thead>
-                    <tr>
+                    <tr className="table-warning h3 text-center">
                         <th>User Id</th>
                         <th>Id</th>
                         <th>Title</th>
@@ -18,14 +40,13 @@ function CustomHook() {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map(todo => {
-                        console.log("Each Todo :- ", todo);
-                        return <tr>
+                    {todosData.map(todo => {
+                        return <tr key={todo.id}>
                             <td>{todo.userId}</td>
                             <td>{todo.id}</td>
                             <td>{todo.title}</td>
                             <td>
-                                <input type="checkbox" className="form-check-input h2" checked={todo.completed} />
+                                <input type="checkbox" className="form-check-input h2" checked={todo.completed} value={JSON.stringify(todo)} onChange={handleInputChange} />
                             </td>
                         </tr>
                     })}
@@ -42,11 +63,9 @@ const useFetch = (url) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        console.log("UseEffect invoked!");
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setData(data)
             });
     }, [url]);

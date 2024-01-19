@@ -226,4 +226,9 @@ Reducers:-
     
 Component − Component can connect to the store to get the current state and 
             dispatch action to the store so that the store executes the action and updates it's current state.
-
+    1. Component -> 
+    2. Event Handler -> dispatch(action)
+                    ex:- action->{type:'', payload:{}}; 
+    3. Store(origState) 
+    4. reducer(prevState, action) -> updates store(updatedState) 
+    5. Store(newState) -> Component!

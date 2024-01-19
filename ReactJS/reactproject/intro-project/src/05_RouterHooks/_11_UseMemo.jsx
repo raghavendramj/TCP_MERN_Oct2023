@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import jsonData from './_05_Data.json';
-import ComponentHeader from './_00_ComponentHeader';
+import ComponentHeader from '../07_Utils/_00_ComponentHeader';
+
 
 function UseMemoExample() {
 

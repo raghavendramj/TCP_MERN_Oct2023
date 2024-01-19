@@ -183,6 +183,47 @@ useEffect(() => {
 
 
 
-//Usecase :- fetch the data from 
+Usecase :- fetch the data from 
 https://jsonplaceholder.typicode.com/todos
 and display it in table.
+
+
+React redux is an advanced state management library for React
+
+Problem Statement :- 
+
+npm install --save redux react-redux
+
+
+
+    React only supports component level state management. 
+    In a big and complex application, large number of components are used. 
+    React recommends to move the state to the top level component and pass the state to the nested component using properties. 
+    It helps to some extent but it becomes complex when the components increases.
+
+React Redux :-
+    React redux chips in and helps to maintain state at the application level. React redux allows any component to access the state at any time. Also, it allows any component to change the state of the application at any time.
+
+Redux Flow :- 
+    
+Terminology :- 
+Store :-
+    React redux maintains the state of the application in a single place called Redux store.
+    The central place to store the state of the application.
+    React component can 
+        a. Get the latest state from the store.
+        b. Change the state at any time.
+
+Actions :- 
+    Action is an plain object with the type of the action to be done and the input necessary to do the action
+    Example :- CRUD -> Create, Read, Update and Delete
+
+Reducers:-  
+     Reducers are pure functions used to create a new state based on the existing state and the current action. 
+     It returns the newly created state. 
+     For example, in add item scenario, 
+        it creates a new item list and merges the item from the state and new item and returns the newly created list.
+    
+Component − Component can connect to the store to get the current state and 
+            dispatch action to the store so that the store executes the action and updates it's current state.
+

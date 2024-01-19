@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useAllData } from './_08_StudentContext';
 import Student from './_07_Student';
-import ComponentHeader from './_00_ComponentHeader';
+import ComponentHeader from '../07_Utils/_00_ComponentHeader';
 
 function ListStudents() { 
     const dataObj = useAllData();

@@ -21,6 +21,9 @@ import UseReducerExample from "./05_RouterHooks/_10_UseReducer";
 import UseMemoExample from "./05_RouterHooks/_11_UseMemo";
 import UsecallbackExample from "./05_RouterHooks/_12_UseCalback";
 import CustomHook from "./05_RouterHooks/_14_CustomHook";
+import BookOperations from "./06_Redux/01_BookOperations";
+import { Provider } from "react-redux";
+import {bookStore} from "./06_Redux/03_Reducer" 
 
 function App() {
   return <React.Fragment>
@@ -29,8 +32,13 @@ function App() {
         <UseReducerExample />
         <UseMemoExample />
       <UsecallbackExample /> 
+      <CustomHook />
     */}
-    <CustomHook />
+
+    <Provider store={bookStore}>
+      <BookOperations />
+    </Provider>
+
   </React.Fragment>
 
 

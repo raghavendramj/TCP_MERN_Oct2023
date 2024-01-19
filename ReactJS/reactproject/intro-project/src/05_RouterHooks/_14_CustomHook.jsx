@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import ComponentHeader from "./_00_ComponentHeader";
+import ComponentHeader from '../07_Utils/_00_ComponentHeader';
+
 
 function CustomHook() {
 
@@ -16,12 +17,9 @@ function CustomHook() {
         console.log("Data value :- ", JSON.parse(changedData.value));
         const { id, userId } = JSON.parse(changedData.value);
 
-        todosData = todosData.map(todo => {
-            if (todo.id === id && todo.userId === userId) {
-                return { ...todo, completed: changedData.checked };
-            } else {
-                return todo;
-            }
+        todosData = todosData.map(todo => { 
+            return todo.id === id && todo.userId === userId ?
+                { ...todo, completed: changedData.checked } : todo;
         });
         setTodosData(todosData);
     }

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "genre": "Fiction",
+    "publicationYear": 1951,
+    "rating": 4.2
+  },
+  {
+    "id": 2,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Classics",
+    "publicationYear": 1960,
+    "rating": 4.5
+  },
+  {
+    "id": 3,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Classics",
+    "publicationYear": 1925,
+    "rating": 4.7
+  },
+  {
+    "id": 4,
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Dystopian",
+    "publicationYear": 1949,
+    "rating": 4.8
+  },
+  {
+    "id": 5,
+    "title": "The Hitchhiker's Guide to the Galaxy",
+    "author": "Douglas Adams",
+    "genre": "Science Fiction",
+    "publicationYear": 1979,
+    "rating": 4.4
+  }
+]

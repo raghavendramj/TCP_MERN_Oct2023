@@ -1,0 +1,7 @@
+const EventEmitter = require('events');
+
+//Events Flow!
+//1. Define an Event
+//2. Callback function -> What will happen on that event
+//3. Trigger that event
+

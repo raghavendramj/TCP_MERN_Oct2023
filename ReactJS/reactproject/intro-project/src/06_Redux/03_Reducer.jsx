@@ -24,7 +24,6 @@ const bookReducer = (state = [], action) => {
             return updatedState;
         }
     }
-
     return state;
 }
 

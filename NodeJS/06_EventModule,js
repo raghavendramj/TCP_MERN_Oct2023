@@ -1,7 +1,38 @@
-const EventEmitter = require('events');
+const EventEmitter = require("events");
 
 //Events Flow!
-//1. Define an Event
-//2. Callback function -> What will happen on that event
-//3. Trigger that event
+//1. Define event emitter
+//2. Linking an Event emitter with callback function
+//3. Triggering the event.
+//4. Callback function
 
+//4. Callback function -> What will happen on that event
+let addCallBackFn = (a, b) => {
+  let sum = a + b;
+  console.log("Add result  :- ", sum);
+};
+
+let multiplyCallBackFn = (a, b) => {
+  let sum = a * b;
+  console.log("Multiply result  :- ", sum);
+};
+
+let caluclateCallBackFn = (a, b, operator) => {
+  let result = eval(a + operator + b);
+  console.log("Result of (" + a + operator + b + ") :- ", result);
+};
+
+//1. Define event emitter
+const emitter = new EventEmitter();
+
+//2. Attaching/Linking an Event emitter with callback function
+emitter.on("add", addCallBackFn);
+emitter.on("multiply", multiplyCallBackFn);
+emitter.on("calculate", caluclateCallBackFn);
+
+//3. Triggering the event.
+emitter.emit("add", 10, 20);
+emitter.emit("multiply", 10, 20);
+emitter.emit("calculate", 10, 20, "+");
+emitter.emit("calculate", 10, 20, "-");
+emitter.emit("calculate", 10, 20, "*");

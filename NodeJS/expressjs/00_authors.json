@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "genre": "Fiction",
+    "publicationYear": 1951,
+    "rating": 4.2
+  },
+  {
+    "id": 2,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Classics",
+    "publicationYear": 1960,
+    "rating": 4.5
+  },
+  {
+    "id": 3,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Classics",
+    "publicationYear": 1925,
+    "rating": 4.7
+  },
+  {
+    "id": 4,
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Dystopian",
+    "publicationYear": 1949,
+    "rating": 4.8
+  },
+  {
+    "id": 5,
+    "title": "The Hitchhiker's Guide to the Galaxy",
+    "author": "Douglas Adams",
+    "genre": "Science Fiction",
+    "publicationYear": 1979,
+    "rating": 4.4
+  },
+  {
+    "id": 6,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": "Romance",
+    "publicationYear": 1813,
+    "rating": 4.25
+  },
+  {
+    "id": 7,
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "publicationYear": 1954,
+    "rating": 4.6
+  },
+  {
+    "id": 8,
+    "title": "The Chronicles of Narnia",
+    "author": "C.S. Lewis",
+    "genre": "Fantasy",
+    "publicationYear": 1950,
+    "rating": 4.3
+  },
+  {
+    "id": 9,
+    "title": "The Harry Potter series",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "publicationYear": 1997,
+    "rating": 4.7
+  },
+  {
+    "id": 10,
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "genre": "Dystopian",
+    "publicationYear": 1932,
+    "rating": 4.0
+  },
+  {
+    "id": 11,
+    "title": "The Shining",
+    "author": "Stephen King",
+    "genre": "Horror",
+    "publicationYear": 1977,
+    "rating": 4.15
+  },
+  {
+    "id": 12,
+    "title": "The Hunger Games",
+    "author": "Suzanne Collins",
+    "genre": "Dystopian",
+    "publicationYear": 2008,
+    "rating": 4.2
+  },
+  {
+    "id": 13,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "genre": "Philosophical Fiction",
+    "publicationYear": 1988,
+    "rating": 4.3
+  },
+  {
+    "id": 14,
+    "title": "The Road",
+    "author": "Cormac McCarthy",
+    "genre": "Post-apocalyptic",
+    "publicationYear": 2006,
+    "rating": 4.1
+  },
+  {
+    "id": 15,
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "genre": "Adventure",
+    "publicationYear": 1851,
+    "rating": 4.0
+  }
+]

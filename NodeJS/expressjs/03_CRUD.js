@@ -1,5 +1,7 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
+app.use(cors());
 let movies = require("./00_movies.json");
 
 //CRUD -> Create - Read - Update - Delete
@@ -21,6 +23,7 @@ app.post("/api/movies", (req, res) => {
 
 //Read
 app.get("/api/movies", (req, res) => {
+  console.log("Get All Movies invoked");
   res.send(movies);
 });
 
@@ -55,6 +58,7 @@ app.put("/api/movies", (req, res) => {
 //Delete
 app.delete("/api/movies/:id", (req, res) => {
   const movieId = Number(req.param("id"));
+  console.log("Delete Invoked :- movieId ", movieId);
   movies = movies.filter((eachMovie) => eachMovie.id != movieId);
   res.send(movies);
 });

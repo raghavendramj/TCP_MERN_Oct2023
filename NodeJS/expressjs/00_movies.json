@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "title": "Inception",
+      "director": "Christopher Nolan",
+      "genre": "Science Fiction",
+      "releaseYear": 2010,
+      "rating": 4.8
+    },
+    {
+      "id": 2,
+      "title": "The Shawshank Redemption",
+      "director": "Frank Darabont",
+      "genre": "Drama",
+      "releaseYear": 1994,
+      "rating": 4.7
+    },
+    {
+      "id": 3,
+      "title": "Pulp Fiction",
+      "director": "Quentin Tarantino",
+      "genre": "Crime",
+      "releaseYear": 1994,
+      "rating": 4.5
+    },
+    {
+      "id": 4,
+      "title": "The Dark Knight",
+      "director": "Christopher Nolan",
+      "genre": "Action",
+      "releaseYear": 2008,
+      "rating": 4.9
+    },
+    {
+      "id": 5,
+      "title": "Forrest Gump",
+      "director": "Robert Zemeckis",
+      "genre": "Drama",
+      "releaseYear": 1994,
+      "rating": 4.6
+    }
+  ]

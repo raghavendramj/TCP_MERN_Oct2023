@@ -21,7 +21,7 @@ function Movies({ movies, setMovies }) {
     
     return (
         <div className="container">
-            <ComponentHeader headerBgColor="info" headerText="React CRUD Example" subHeaderText="CRUD -> Create - Read - Update - Delete" />
+            <ComponentHeader headerBgColor="info" headerText="Movie Management" subHeaderText="Do all you can... Create - Read - Update - Delete" />
             <table className='table table-striped'>
                 <thead>
                     <th>Sl.No</th>

@@ -3,7 +3,7 @@ function ComponentHeader({ headerBgColor, headerText, subHeaderText }) {
     return (
         <div className={headerStyle}>
             <h1>{headerText}</h1>
-            {subHeaderText && <h3 className="text-success">{subHeaderText}</h3>}
+            {subHeaderText && <h3 className="text-muted">{subHeaderText}</h3>}
         </div>
     );
 }

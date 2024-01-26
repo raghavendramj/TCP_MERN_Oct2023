@@ -1,10 +1,10 @@
-import React from "react"; 
-import Movies from "./components/_01_Authors";
+import React from "react";  
+import MovieNavLinks from "./components/_06_NavLinks"; 
 
 function App() {
   return (
     <React.Fragment>
-      <Movies />
+      <MovieNavLinks />
     </React.Fragment>
   );
 }

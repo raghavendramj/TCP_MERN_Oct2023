@@ -3,15 +3,9 @@ import ComponentHeader from "./_00_CompHeader";
 import Movie from "./_02_Movie";
 import axios from "axios";
 
-
-function Movies() {
-
-    let [movies, setMovies] = useState([]);
-
-    let backEndUrl = "http://localhost:8082/api/movies";
-
+function Movies({ movies, setMovies }) { 
+    let backEndUrl = "http://localhost:8082/api/movies"; 
     useEffect(() => {
-
         axios.get(backEndUrl).then((res) => {
             console.log("UI Data :- ", res);
             setMovies(res.data);
@@ -19,13 +13,12 @@ function Movies() {
     }, []);
 
     const handleDelete = (movieId) => {
-
-        axios.delete(backEndUrl + "/" + movieId).then((res) => {
+         axios.delete(backEndUrl + "/" + movieId).then((res) => {
             console.log("res -> ", res);
             setMovies(res.data);
-        })
-
+        }) 
     }
+    
     return (
         <div className="container">
             <ComponentHeader headerBgColor="info" headerText="React CRUD Example" subHeaderText="CRUD -> Create - Read - Update - Delete" />

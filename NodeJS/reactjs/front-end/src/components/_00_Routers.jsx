@@ -4,12 +4,11 @@ import AddNewMovie from "./_03_AddNewMovie";
 import EditMovie from "./_04_EditMovie";
 import { useState } from "react";
 import PageNotFound from "./_05_PNF";
-import MovieNavLinks from "./_06_NavLinks";
 
-function MovieRouters() { 
+function MovieRouters() {
     let [movies, setMovies] = useState([]);
     return (
-        <> 
+        <>
             <Routes>
                 <Route path="/movies" element={<Movies
                     movies={movies}
@@ -18,7 +17,6 @@ function MovieRouters() {
                 <Route path="/edit/movie/:movieId" element={
                     <EditMovie
                         movies={movies}
-                        setMovies={setMovies}
                     />
                 }></Route>
                 <Route path="*" element={<PageNotFound />}></Route>

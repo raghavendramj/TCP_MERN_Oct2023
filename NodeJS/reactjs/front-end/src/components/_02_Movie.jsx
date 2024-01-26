@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Movie({ slNo, movie, handleDelete }) {
     const toLink = `/edit/movie/${movie.id}`;
     return (
-        <tr key={movie.id}>
+        <tr>
             <td>{slNo}</td>
             <td>{movie.title}</td>
             <td>{movie.director}</td>

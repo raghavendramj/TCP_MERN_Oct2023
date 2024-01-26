@@ -2,43 +2,28 @@ import { useState } from "react";
 import ComponentHeader from "./_00_CompHeader";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { CONSTANTS, Util } from "./_00_Constants";
 
-function AddNewMovie({ movies, setMovies }) {
-    const [newMovie, setNewMovie] = useState({});
+function AddNewMovie() {
+    const [newMovie, setNewMovie] = useState(CONSTANTS.emptyMovieObj);
     const navigate = useNavigate();
 
     const isSaveDisabled = !newMovie.title || !newMovie.director
         || !newMovie.genre || !newMovie.releaseYear || !newMovie.rating;
 
     const handleEditInputChange = (e) => {
-        const { name, value } = e.target;
-        setNewMovie((prevMovie) => ({
-            ...prevMovie,
-            [name]: value,
-        }));
-        console.log("newMovie", newMovie);
+        Util.handleEditInputChange(setNewMovie, e.target);
     };
 
     const handleNewMovie = (e) => {
         e.preventDefault();
 
-        axios.post("http://localhost:8082/api/movies/", newMovie)
+        axios.post(CONSTANTS.backEndUrl, newMovie)
             .then((res) => {
-                console.log("Post Response :- ", res);
+                navigate('/movies');
             });
-        console.log("New Movie Call don...", newMovie);
-        setNewMovie({});
-        navigate('/movies');
+        setNewMovie(CONSTANTS.emptyMovieObj);
     };
-
-    // {
-    //     "id": 8,
-    //     "title": "The Godfather",
-    //     "director": "Francis Ford Coppola",
-    //     "genre": "Crime",
-    //     "releaseYear": 1972,
-    //     "rating": 4.9
-    //   }
 
     return (
         <>

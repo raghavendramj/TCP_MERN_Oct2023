@@ -2,43 +2,31 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import ComponentHeader from "./_00_CompHeader";
 import axios from "axios";
+import { CONSTANTS, Util } from "./_00_Constants";
 
-function EditMovie({ movies, setMovies }) {
+function EditMovie({ movies }) {
 
     const { movieId } = useParams();
     const navigate = useNavigate();
-    const [editedMovie, setEditedMovie] = useState({});
+    const [editedMovie, setEditedMovie] = useState(CONSTANTS.emptyMovieObj);
     const isSaveDisabled = !editedMovie.title || !editedMovie.director
         || !editedMovie.genre || !editedMovie.releaseYear || !editedMovie.rating;
 
     useEffect(() => {
         const movieToEdit = movies.find((movie) => String(movie.id) === movieId);
         setEditedMovie(movieToEdit || {});
-        console.log("useEffect is invoked :- movieToEdit ", movieToEdit);
     }, [movieId, movies]);
 
-
     const handleEditInputChange = (e) => {
-        const { name, value } = e.target;
-        console.log("Name :- ", name);
-        console.log("value :- ", value);
-        setEditedMovie((prevMovie) => ({
-            ...prevMovie,
-            [name]: value,
-        }));
-        
-        console.log("editedMovie :- ", editedMovie);
+        Util.handleEditInputChange(setEditedMovie, e.target);
     };
-
     const handleUpdatemovie = (e) => {
         e.preventDefault();
-        axios.put("http://localhost:8082/api/movies/", editedMovie)
-            .then((res) => {
-                console.log("PUT Response :- ", res);
-            });
-        console.log("New Movie Call done...", editedMovie);
-        setEditedMovie({});
-        navigate('/movies');
+        axios.put(CONSTANTS.backEndUrl, editedMovie)
+            .then((res) => { 
+                navigate('/movies');
+            }); 
+        setEditedMovie(CONSTANTS.emptyMovieObj);
     };
 
 

@@ -1,9 +1,9 @@
-import React from "react";  
-import MovieNavLinks from "./components/_06_NavLinks"; 
+import React from "react";
+import MovieNavLinks from "./components/_06_NavLinks";
 
 function App() {
   return (
-    <React.Fragment>
+    <React.Fragment>``
       <MovieNavLinks />
     </React.Fragment>
   );

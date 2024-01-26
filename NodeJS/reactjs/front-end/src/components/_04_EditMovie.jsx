@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import ComponentHeader from "./_00_CompHeader";
+import axios from "axios";
 
 function EditMovie({ movies, setMovies }) {
 
@@ -19,19 +20,24 @@ function EditMovie({ movies, setMovies }) {
 
     const handleEditInputChange = (e) => {
         const { name, value } = e.target;
+        console.log("Name :- ", name);
+        console.log("value :- ", value);
         setEditedMovie((prevMovie) => ({
             ...prevMovie,
             [name]: value,
         }));
+        
+        console.log("editedMovie :- ", editedMovie);
     };
 
     const handleUpdatemovie = (e) => {
         e.preventDefault();
-        let prevMovies = [...movies];
-        const changedMovies = prevMovies.map((movie) =>
-            String(movie.id) === movieId ? editedMovie : movie
-        )
-        setMovies(changedMovies);
+        axios.put("http://localhost:8082/api/movies/", editedMovie)
+            .then((res) => {
+                console.log("PUT Response :- ", res);
+            });
+        console.log("New Movie Call done...", editedMovie);
+        setEditedMovie({});
         navigate('/movies');
     };
 
@@ -43,7 +49,7 @@ function EditMovie({ movies, setMovies }) {
             <form onSubmit={handleUpdatemovie}>
                 <div className="form-group">
                     <label htmlFor="name">Name of the movie?</label>
-                    <input type="text" name="name" className="form-control" placeholder="Movie Name"
+                    <input type="text" name="title" className="form-control" placeholder="Movie Name"
                         value={editedMovie.title}
                         onChange={handleEditInputChange}></input>
                 </div>

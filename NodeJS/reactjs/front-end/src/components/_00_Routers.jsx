@@ -6,12 +6,10 @@ import { useState } from "react";
 import PageNotFound from "./_05_PNF";
 import MovieNavLinks from "./_06_NavLinks";
 
-function MovieRouters() {
-
+function MovieRouters() { 
     let [movies, setMovies] = useState([]);
     return (
-        <>
-            <MovieNavLinks />
+        <> 
             <Routes>
                 <Route path="/movies" element={<Movies
                     movies={movies}

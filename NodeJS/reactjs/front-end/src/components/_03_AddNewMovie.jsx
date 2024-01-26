@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ComponentHeader from "./_00_CompHeader";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function AddNewMovie({ movies, setMovies }) {
     const [newMovie, setNewMovie] = useState({});
@@ -15,15 +16,29 @@ function AddNewMovie({ movies, setMovies }) {
             ...prevMovie,
             [name]: value,
         }));
+        console.log("newMovie", newMovie);
     };
 
     const handleNewMovie = (e) => {
         e.preventDefault();
-        let prevMovies = [...movies];
-        let changedMovies = prevMovies.push(newMovie);
-        setMovies(changedMovies);
+
+        axios.post("http://localhost:8082/api/movies/", newMovie)
+            .then((res) => {
+                console.log("Post Response :- ", res);
+            });
+        console.log("New Movie Call don...", newMovie);
+        setNewMovie({});
         navigate('/movies');
     };
+
+    // {
+    //     "id": 8,
+    //     "title": "The Godfather",
+    //     "director": "Francis Ford Coppola",
+    //     "genre": "Crime",
+    //     "releaseYear": 1972,
+    //     "rating": 4.9
+    //   }
 
     return (
         <>
@@ -31,7 +46,7 @@ function AddNewMovie({ movies, setMovies }) {
             <form onSubmit={handleNewMovie}>
                 <div className="form-group">
                     <label htmlFor="name">Name of the movie?</label>
-                    <input type="text" name="name" className="form-control" placeholder="Movie Name"
+                    <input type="text" name="title" className="form-control" placeholder="Movie Name"
                         value={newMovie.title}
                         onChange={handleEditInputChange}></input>
                 </div>

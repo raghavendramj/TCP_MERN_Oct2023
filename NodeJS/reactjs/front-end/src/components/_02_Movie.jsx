@@ -6,7 +6,7 @@ function Movie({ slNo, movie, handleDelete }) {
         <tr key={movie.id}>
             <td>{slNo}</td>
             <td>{movie.title}</td>
-            <td>{movie.author}</td>
+            <td>{movie.director}</td>
             <td>{movie.genre}</td>
             <td>{movie.releaseYear}</td>
             <td>{movie.rating}</td>

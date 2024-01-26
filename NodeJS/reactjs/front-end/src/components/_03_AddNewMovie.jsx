@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { CONSTANTS, Util } from "./_00_Constants";
 
-function AddNewMovie() {
+function AddNewMovie({movies}) {
     const [newMovie, setNewMovie] = useState(CONSTANTS.emptyMovieObj);
     const navigate = useNavigate();
 
@@ -17,8 +17,9 @@ function AddNewMovie() {
 
     const handleNewMovie = (e) => {
         e.preventDefault();
+        const newMovieWithId = {...newMovie, id: movies.length+2};
 
-        axios.post(CONSTANTS.backEndUrl, newMovie)
+        axios.post(CONSTANTS.backEndUrl, newMovieWithId)
             .then((res) => {
                 navigate('/movies');
             });

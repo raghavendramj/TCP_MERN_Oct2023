@@ -13,12 +13,8 @@ function MovieRouters() {
                 <Route path="/movies" element={<Movies
                     movies={movies}
                     setMovies={setMovies} />}></Route>
-                <Route path="/add" element={<AddNewMovie />}> </Route>
-                <Route path="/edit/movie/:movieId" element={
-                    <EditMovie
-                        movies={movies}
-                    />
-                }></Route>
+                <Route path="/add" element={<AddNewMovie movies={movies} />}> </Route>
+                <Route path="/edit/movie/:movieId" element={<EditMovie movies={movies} />}></Route>
                 <Route path="*" element={<PageNotFound />}></Route>
             </Routes>
         </>

@@ -7,6 +7,7 @@ import { CONSTANTS } from "./_00_Constants";
 function Movies({ movies, setMovies }) {
     useEffect(() => {
         axios.get(CONSTANTS.backEndUrl).then((res) => {
+            console.log("Movies Data :- ", res.data);
             setMovies(res.data);
         })
     }, []);

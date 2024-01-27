@@ -1,13 +1,13 @@
 import axios from "axios";
 import { CONSTANTS } from "../components/_00_Constants";
 
-export const FETCH_MOVIES_SUCCESS = "FETCH_MOVIES_SUCCESS";
+export const FETCH_MOVIES = "FETCH_MOVIES";
 export const ADD_MOVIE = "ADD_MOVIE";
 export const UPDATE_MOVIE = "UPDATE_MOVIE";
 export const DELETE_MOVIE = "DELETE_MOVIE";
 
-export const fetchMoviesSuccess = (data) => ({
-  type: FETCH_MOVIES_SUCCESS,
+export const fetchMovies = (data) => ({
+  type: FETCH_MOVIES,
   payload: data,
 });
 
@@ -26,16 +26,16 @@ export const deleteMovie = (movieId) => ({
   payload: movieId,
 });
 
-export const fetchMovies = () => {
+export const getMovies = () => {
   return (dispatch) => {
     return axios.get(CONSTANTS.backEndUrl).then((response) => {
-      dispatch(fetchMoviesSuccess(response.data));
+      dispatch(fetchMovies(response.data));
     });
   };
 };
 
 export const createMovie = (movie) => {
-  return (dispatch) => { 
+  return (dispatch) => {
     return axios.post(CONSTANTS.backEndUrl, movie).then((response) => {
       console.log("response :- ", response);
       dispatch(addMovie(response.data));

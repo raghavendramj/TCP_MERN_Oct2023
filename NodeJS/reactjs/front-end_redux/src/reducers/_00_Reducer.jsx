@@ -1,12 +1,13 @@
-import { FETCH_MOVIES_SUCCESS, ADD_MOVIE, UPDATE_MOVIE, DELETE_MOVIE } from './_01_Action';
+import { FETCH_MOVIES, ADD_MOVIE, UPDATE_MOVIE, DELETE_MOVIE } from './_01_Action';
 
 const initialState = {
   movies: [],
 };
 
 export const moviesReducer = (state = initialState, action) => {
+  console.log("action -> ", action);
   switch (action.type) {
-    case FETCH_MOVIES_SUCCESS:
+    case FETCH_MOVIES:
       return {
         ...state,
         movies: action.payload,

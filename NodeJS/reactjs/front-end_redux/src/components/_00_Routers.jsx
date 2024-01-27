@@ -7,9 +7,7 @@ import PageNotFound from "./_05_PNF";
 
 import { useDispatch, useSelector } from 'react-redux'
 import {
-    fetchMovies,
-    createMovie,
-    updateMovieRequest,
+    getMovies, 
     deleteMovieRequest,
 } from '../reducers/_01_Action';
 
@@ -19,7 +17,7 @@ function MovieRouters() {
     const movies = useSelector((state) => state.movies);
 
     useEffect(() => {
-        dispatch(fetchMovies());
+        dispatch(getMovies());
     }, [dispatch]);
 
     const handleDelete = (id) => {

@@ -1,12 +1,14 @@
 import { useState } from "react";
 import ComponentHeader from "./_00_CompHeader";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { CONSTANTS, Util } from "./_00_Constants";
+import { useDispatch } from "react-redux";
+import { createMovie } from "../reducers/_01_Action";
 
-function AddNewMovie({movies}) {
+function AddNewMovie() {
     const [newMovie, setNewMovie] = useState(CONSTANTS.emptyMovieObj);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const isSaveDisabled = !newMovie.title || !newMovie.director
         || !newMovie.genre || !newMovie.releaseYear || !newMovie.rating;
@@ -16,13 +18,10 @@ function AddNewMovie({movies}) {
     };
 
     const handleNewMovie = (e) => {
-        e.preventDefault();
-        const newMovieWithId = {...newMovie, id: movies.length+2};
-
-        axios.post(CONSTANTS.backEndUrl, newMovieWithId)
-            .then((res) => {
-                navigate('/movies');
-            });
+        e.preventDefault(); 
+        console.log("newMovie -> ", newMovie)
+        dispatch(createMovie(newMovie));
+        navigate('/movies');
         setNewMovie(CONSTANTS.emptyMovieObj);
     };
 

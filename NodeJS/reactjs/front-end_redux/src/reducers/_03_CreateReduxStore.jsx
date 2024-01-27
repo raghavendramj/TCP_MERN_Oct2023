@@ -7,3 +7,6 @@ export const moviesStore = createStore(
   moviesReducer,
   applyMiddleware(thunk, fetchMoviesMiddleware)
 );
+
+
+export const newMoviestore = createStore(moviesReducer, applyMiddleware(thunk));

@@ -1,3 +1,6 @@
+import axios from "axios";
+import { CONSTANTS } from "../components/_00_Constants";
+
 export const FETCH_MOVIES_SUCCESS = "FETCH_MOVIES_SUCCESS";
 export const ADD_MOVIE = "ADD_MOVIE";
 export const UPDATE_MOVIE = "UPDATE_MOVIE";
@@ -22,3 +25,38 @@ export const deleteMovie = (movieId) => ({
   type: DELETE_MOVIE,
   payload: movieId,
 });
+
+export const fetchMovies = () => {
+  return (dispatch) => {
+    return axios.get(CONSTANTS.backEndUrl).then((response) => {
+      dispatch(fetchMoviesSuccess(response.data));
+    });
+  };
+};
+
+export const createMovie = (movie) => {
+  return (dispatch) => { 
+    return axios.post(CONSTANTS.backEndUrl, movie).then((response) => {
+      console.log("response :- ", response);
+      dispatch(addMovie(response.data));
+    });
+  };
+};
+
+export const updateMovieRequest = (id, udpatedMovie) => {
+  return (dispatch) => {
+    return axios
+      .put(`${CONSTANTS.backEndUrl}/${id}`, udpatedMovie)
+      .then((response) => {
+        dispatch(updateMovie(response.data));
+      });
+  };
+};
+
+export const deleteMovieRequest = (id) => {
+  return (dispatch) => {
+    return axios.delete(`${CONSTANTS.backEndUrl}/${id}`).then(() => {
+      dispatch(deleteMovie(id));
+    });
+  };
+};

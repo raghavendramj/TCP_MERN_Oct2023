@@ -31,7 +31,8 @@ app.listen(8082);
 
 //Update
 app.use(express.json());
-app.put("/api/movies", (req, res) => {
+app.put("/api/movies/:id", (req, res) => {
+  const movieId = Number(req.param("id"));
   const movie = req.body;
   if (
     !movie.id ||
@@ -43,9 +44,8 @@ app.put("/api/movies", (req, res) => {
   ) {
     res.send("director, title and genre are required!");
   }
-
   movies = movies.map((eachMovie) => {
-    if (eachMovie.id == movie.id) {
+    if (movieId == movie.id) {
       return movie;
     } else {
       return eachMovie;

@@ -6,28 +6,31 @@ import { useEffect } from "react";
 import PageNotFound from "./_05_PNF";
 
 import { useDispatch, useSelector } from 'react-redux'
+import {
+    fetchMovies,
+    createMovie,
+    updateMovieRequest,
+    deleteMovieRequest,
+} from '../reducers/_01_Action';
 
-function MovieRouters() { 
+function MovieRouters() {
+
     const dispatch = useDispatch();
     const movies = useSelector((state) => state.movies);
 
     useEffect(() => {
-        dispatch({ type: 'FETCH_MOVIES' });
+        dispatch(fetchMovies());
     }, [dispatch]);
 
     const handleDelete = (id) => {
-        console.log("Delete invoked :- ", id);
-        dispatch({
-            type: 'DELETE_MOVIE',
-            payload: id,
-        });
+        dispatch(deleteMovieRequest(id));
     };
 
     return (
         <>
             <Routes>
                 <Route path="/movies" element={<Movies movies={movies} handleDelete={handleDelete} />}></Route>
-                <Route path="/add" element={<AddNewMovie movies={movies} />}> </Route>
+                <Route path="/add" element={<AddNewMovie />}> </Route>
                 <Route path="/edit/movie/:movieId" element={<EditMovie movies={movies} />}></Route>
                 <Route path="*" element={<PageNotFound />}></Route>
             </Routes>

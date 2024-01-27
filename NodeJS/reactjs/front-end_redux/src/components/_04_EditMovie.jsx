@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import ComponentHeader from "./_00_CompHeader";
-import axios from "axios";
 import { CONSTANTS, Util } from "./_00_Constants";
+import { updateMovieRequest } from "../reducers/_01_Action";
+import { useDispatch } from "react-redux";
 
 function EditMovie({ movies }) {
 
     const { movieId } = useParams();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [editedMovie, setEditedMovie] = useState(CONSTANTS.emptyMovieObj);
     const isSaveDisabled = !editedMovie.title || !editedMovie.director
         || !editedMovie.genre || !editedMovie.releaseYear || !editedMovie.rating;
@@ -22,10 +24,9 @@ function EditMovie({ movies }) {
     };
     const handleUpdatemovie = (e) => {
         e.preventDefault();
-        axios.put(CONSTANTS.backEndUrl, editedMovie)
-            .then((res) => { 
-                navigate('/movies');
-            }); 
+        console.log("editedMovie -> ", editedMovie)
+        dispatch(updateMovieRequest(movieId, editedMovie));
+        navigate('/movies');
         setEditedMovie(CONSTANTS.emptyMovieObj);
     };
 

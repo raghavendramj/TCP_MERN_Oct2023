@@ -45,7 +45,7 @@ app.put("/api/movies/:id", (req, res) => {
     res.send("director, title and genre are required!");
   }
   movies = movies.map((eachMovie) => {
-    if (movieId == movie.id) {
+    if (movieId == eachMovie.id) {
       return movie;
     } else {
       return eachMovie;

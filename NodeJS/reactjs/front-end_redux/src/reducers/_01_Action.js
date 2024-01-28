@@ -53,6 +53,7 @@ export const updateMovieRequest = (id, udpatedMovie) => {
   };
 };
 
+//Update your backend -> Your cache or redux store still needs to be updated
 export const deleteMovieRequest = (id) => {
   return (dispatch) => {
     return axios.delete(`${CONSTANTS.backEndUrl}/${id}`).then(() => {

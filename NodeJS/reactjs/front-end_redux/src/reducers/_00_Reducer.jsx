@@ -24,6 +24,7 @@ export const moviesReducer = (state = initialState, action) => {
           movie.id === action.payload.id ? action.payload : movie
         ),
       };
+      //This just updates the state!
     case DELETE_MOVIE:
       return {
         ...state,

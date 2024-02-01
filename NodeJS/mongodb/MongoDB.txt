@@ -752,6 +752,47 @@ db.classes.insertMany([
   }
 ]);
 
+
+
+
+_id: 1,
+    first_name: "Alice",
+    last_name: "Johnson",
+    class_id: 101,
+    teacher_id: 201
+  },
+
+Students
+_id		first_name		last_name		class_id		teacher_id
+1 		Alice			Johnson			101				201
+2 		Bob				Smith			101				201
+3 		Charlie			Davis			101				201
+4 		David			Miller			102				202
+5		Eva				Wilso			102				202
+
+Classes
+_id		class_name		class_code		teacher_id  	schedule 
+101		Physics			PHY101			203				Monday, Tuesday				
+102		Mathematics		MATH101			202				Wednesday, Thursday
+103		Chemistry		CHEM101			204				Monday, Wednesday
+
+
+db.students.aggregate([
+  {
+    $lookup: {
+      from: "classes",
+      localField: "class_id",
+      foreignField: "_id",
+      as: "class_info"
+    }
+}])
+
+
+
+query ->
+
+1. Get students that belong to class 101
+
 db.students.aggregate([
   {
     $lookup: {
@@ -761,3 +802,5 @@ db.students.aggregate([
       as: "class_info"
     }
   }])
+
+2. Get Students who are studying under teacher 202

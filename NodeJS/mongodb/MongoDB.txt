@@ -257,17 +257,6 @@ Note: You cannot use both 0 and 1 in the same object.
 
 Where Clause Equivalents in MongoDB
 -----------------------------------
-
-Write select queries for fields.
-db.posts.find({}, {"_id":0 })
-
-
-db.posts.find({likes:{$gt:4}}, {"_id":0})
-
-{} -> filter criteria
-
-{"_id":0 } -> 1 -> include, 0-> exclude
-
 Equality
 --------
 Syntax :- {<key>:{$eg:<value>}}
@@ -357,3 +346,77 @@ from posts
 where title='Express JS' and likes=5;
 ---------------------------------------
 
+update :-
+--------
+>db.COLLECTION_NAME.update(SELECTION_CRITERIA, UPDATED_DATA)
+
+save()
+------
+db.COLLECTION_NAME.save({_id:ObjectId(),NEW_DATA})
+
+findOneAndUpdate()
+------------------
+db.COLLECTION_NAME.findOneAndUpdate(SELECTIOIN_CRITERIA, UPDATED_DATA)
+
+db.empDetails.findOneAndUpdate(
+	{First_Name: 'Radhika'},
+	{$set: {Age: 30, e_mail: "radhika_sharma.123@newgmail.com"}}
+)
+
+
+db.empDetails.insertMany(
+	[
+		{
+			First_Name: "Radhika",
+			Last_Name: "Sharma",
+			Age: "26",
+			e_mail: "radhika_sharma.123@gmail.com",
+			phone: "9000012345"
+		},
+		{
+			First_Name: "Rachel",
+			Last_Name: "Christopher",
+			Age: "27",
+			e_mail: "Rachel_Christopher.123@gmail.com",
+			phone: "9000054321"
+		},
+		{
+			First_Name: "Fathima",
+			Last_Name: "Sheik",
+			Age: "24",
+			e_mail: "Fathima_Sheik.123@gmail.com",
+			phone: "9000054321"
+		},
+		{
+			First_Name: "Vaibhav",
+			Last_Name: "Yagneshwar",
+			Age: "26",
+			e_mail: "Vaibhav.Yagneshwar@gmail.com",
+			phone: "5642512454"
+		},
+		{
+			First_Name: "Rahul",
+			Last_Name: "Anand",
+			Age: "27",
+			e_mail: "Rahul.anand.123@gmail.com",
+			phone: "7862121212"
+		},
+		{
+			First_Name: "Raghav",
+			Last_Name: "MJ",
+			Age: "24",
+			e_mail: "raghavmj@gmail.com",
+			phone: "9565656111"
+		}
+	]
+)
+
+db.empDetails.findOneAndUpdate(
+	{First_Name: 'Radhika'},
+	{ $set: { Age: '30',e_mail: 'radhika_newemail@gmail.com'}}
+)
+
+updateOne()
+-----------
+>db.COLLECTION_NAME.updateOne(<filter>, <update>)
+db.posts.find( { title: "Learning Mongo" } )

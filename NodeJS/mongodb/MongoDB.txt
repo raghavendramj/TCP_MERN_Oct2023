@@ -1,4 +1,4 @@
-MongoDB Notes
+cksMongoDB Notes
 ---------------
 MongoDB is a document database. It stores data in a type of JSON format called BSON.
 MongoDB is a No SQL database.
@@ -420,3 +420,99 @@ updateOne()
 -----------
 >db.COLLECTION_NAME.updateOne(<filter>, <update>)
 db.posts.find( { title: "Learning Mongo" } )
+ 
+db.posts.updateOne(
+  { title: "Learning Python" },
+  {
+    $set:
+      {
+        title: "Learning mongo",
+        body: "Its used for data science!",
+        category: "Event",
+        likes: 5,
+        tags: ["news", "events"],
+        date: Date()
+      }
+  }
+)
+
+
+Update if exists otherwise create new:- { upsert: true }
+
+db.posts.updateOne(
+  { title: "Understanding Python" },
+  {
+    $set:
+      {
+        title: "Understanding Python",
+        body: "Its used for data science!",
+        category: "Event",
+        likes: 5,
+        tags: ["news", "events"],
+        date: Date()
+      }
+  },
+  { upsert: true }
+)
+
+updateMany() -> Everything together in the table for matching criteria
+------------
+
+db.posts.updateMany({}, { $inc: { likes: 1 } })
+
+MongoDB – Field Update Operators
+--------------------------------
+$currentDate	This operator is used to set the value of a field to current date, either as a Date or a Timestamp.
+$inc			This operator is used to increment the value of the field by the specified amount.
+$min			This operator is used only to update the field if the specified value is less than the existing field value
+$max			This operator is used only to update the field if the specified value is greater than the existing field value.
+$mul			This operator is used to multiply the value of the field by the specified amount.
+$rename			This operator is used to rename a field.
+$setOnInsert	This operator is used to set the value of a field if an update results in an insert of a document. It has no effect on update operations that modify existing documents.
+
+remove()
+--------
+Syntax :- db.COLLECTION_NAME.remove(DELLETION_CRITTERIA)
+Ex:- db.empDetails.remove({"First_Name" : "Radhika"})
+
+
+Remove One:-
+------------
+If there are multiple records and you want to delete only the first record, then set justOne parameter in remove() method.
+Syntax :- db.COLLECTION_NAME.remove(DELETION_CRITERIA,1)
+Ex :- db.empDetails.remove({"First_Name" : "Radhika"}, 1)
+
+
+Remove All Documents
+---------------------
+If you don't specify deletion criteria, then MongoDB will delete whole documents from the collection. This is equivalent of SQL's truncate command.
+Syntax :- db.COLLECTION_NAME.remove({})
+Ex :- db.empDetails.remove({})
+
+The Limit() Method
+------------------
+Syntax :- db.COLLECTION_NAME.find().limit(NUMBER)
+Ex:- db.empDetails.find().limit(2) 
+
+The sort() Method
+-----------------
+Syntax:- >db.COLLECTION_NAME.find().sort({KEY:1})
+Ex:- db.empDetails.find({}, {First_Name: 1, _id:0}).sort({"First_Name":1})
+
+The createIndex() Method
+------------------------
+Syntax :- >db.COLLECTION_NAME.createIndex({KEY:1})
+ex:- db.empDetails.createIndex({First_Name:"text"})
+	 db.empDetails.find({$text:{$search:"Fathima"}})
+
+Exercise :-
+-----------
+Create Database :- 
+Create collections.
+
+Students
+	-> rollno, name, class
+Class
+	-> no, room_no, section
+Teacher
+	-> no, class_no, subject

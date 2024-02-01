@@ -516,3 +516,248 @@ Class
 	-> no, room_no, section
 Teacher
 	-> no, class_no, subject
+
+
+{
+  "Students": [
+    {
+      "rollno": 1,
+      "name": "John Doe",
+      "class": "A",
+      "teacher_no": 1
+    },
+    {
+      "rollno": 2,
+      "name": "Jane Doe",
+      "class": "B",
+      "teacher_no": 2
+    },
+    {
+      "rollno": 3,
+      "name": "Alice Smith",
+      "class": "A",
+      "teacher_no": 1
+    },
+    {
+      "rollno": 4,
+      "name": "Bob Johnson",
+      "class": "B",
+      "teacher_no": 2
+    },
+    {
+      "rollno": 5,
+      "name": "Eva Brown",
+      "class": "A",
+      "teacher_no": 1
+    }
+    // Add more student documents as needed
+  ],
+  "Class": [
+    {
+      "no": "A",
+      "room_no": 101,
+      "section": "A1",
+      "teacher_no": 1
+    },
+    {
+      "no": "B",
+      "room_no": 102,
+      "section": "B1",
+      "teacher_no": 2
+    },
+    {
+      "no": "C",
+      "room_no": 103,
+      "section": "C1",
+      "teacher_no": 3
+    },
+    {
+      "no": "D",
+      "room_no": 104,
+      "section": "D1",
+      "teacher_no": 4
+    },
+    {
+      "no": "E",
+      "room_no": 105,
+      "section": "E1",
+      "teacher_no": 5
+    }
+    // Add more class documents as needed
+  ],
+  "Teacher": [
+    {
+      "no": 1,
+      "class_no": "A",
+      "subject": "Math"
+    },
+    {
+      "no": 2,
+      "class_no": "B",
+      "subject": "Science"
+    },
+    {
+      "no": 3,
+      "class_no": "C",
+      "subject": "English"
+    },
+    {
+      "no": 4,
+      "class_no": "D",
+      "subject": "History"
+    },
+    {
+      "no": 5,
+      "class_no": "E",
+      "subject": "Physics"
+    }
+    // Add more teacher documents as needed
+  ]
+}
+
+
+db.Students.insertMany([
+  {
+    rollno: 11,
+    name: "shreyas",
+    class: 2
+  },
+  {
+    rollno: 12,
+    name: "srijith",
+    class: 1
+  },
+  {
+    rollno: 13,
+    name: "srinath",
+    class: 3
+  }
+])
+db.Class.insertMany([
+  {
+    no: 1,
+    room_no: 201,
+    class: 1
+  },
+  {
+    no: 2,
+    room_no: 202,
+    class: 2
+  },
+  {
+    no: 3,
+    room_no: 203,
+    class: 3
+  }
+])
+db.Teacher.insertMany([
+  {
+    no: 1,
+    class_no: 1,
+    subject: "Maths"
+  },
+  {
+    no: 2,
+    class_no: 2,
+    subject: "Science"
+  },
+  {
+    no: 3,
+    class_no: 3,
+    subject: "History"
+  }
+])
+
+
+// Students Collection
+{
+  _id: ObjectId("1"),
+  first_name: "Alice",
+  last_name: "Johnson",
+  class_id: ObjectId("101"),
+  teacher_id: ObjectId("201")
+}
+
+
+// Class Collection
+{
+  _id: ObjectId("101"),
+  class_name: "Biology",
+  class_code: "BIO101",
+  teacher_id: ObjectId("201"),
+  schedule: "Monday, Wednesday, Friday"
+}
+
+// Teacher Collection
+{
+  _id: ObjectId("201"),
+  first_name: "Dr. Miller",
+  last_name: "Jones",
+  subject_taught: "Biology",
+  class_taught: "BIO101"
+}
+
+db.students.aggregate([
+  {
+    $lookup: {
+      from: "classes",
+      localField: "class_id",
+      foreignField: "_id",
+      as: "class_info"
+    }
+  },
+  {
+    $lookup: {
+      from: "teachers",
+      localField: "teacher_id",
+      foreignField: "_id",
+      as: "teacher_info"
+    }
+  }
+]);
+
+
+db.students.insertMany([
+  { 
+   _id: 1,
+    first_name: "Alice",
+    last_name: "Johnson",
+    class_id: 101,
+    teacher_id: 201
+  },
+  { 
+   _id: 2,
+    first_name: "Bob",
+    last_name: "Smith",
+    class_id: 102,
+    teacher_id: 202
+  }
+]);
+
+
+db.classes.insertMany([
+  {
+    _id: 101,
+    class_name: "Biology",
+    class_code: "BIO101",
+    teacher_id: 201,
+    schedule: "Monday, Wednesday, Friday"
+  },
+  {
+    _id: 102,
+    class_name: "Physics",
+    class_code: "PHY101",
+    teacher_id: 202,
+    schedule: "Tuesday, Thursday"
+  }
+]);
+
+db.students.aggregate([
+  {
+    $lookup: {
+      from: "classes",
+      localField: "class_id",
+      foreignField: "_id",
+      as: "class_info"
+    }
+  }])

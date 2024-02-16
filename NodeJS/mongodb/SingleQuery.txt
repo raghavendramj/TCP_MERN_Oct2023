@@ -1,0 +1,29 @@
+Find students of the class 13B with subject Literature?
+
+> db.Teacher.find() 
+{ "no" : 106, "class_no" : "13B", "subject" : "Literature" } 
+
+> db.Class.find()
+{ "name" : "13B", "room_no" : 103, "section" : "C", "teacher_no" : 106 }
+
+> db.Students.find()
+{  "rollno" : 106, "name" : "Rahul", "class" : "13B", "teacher_no" : 106 }
+{  "rollno" : 107, "name" : "Rishabh", "class" : "13B", "teacher_no" : 106 }
+{  "rollno" : 108, "name" : "Hrithik", "class" : "13B", "teacher_no" : 106 }
+
+
+db.Teacher.aggregate([
+  {
+     // and condition with class_no and subject
+  },
+  {
+     $lookup: {
+        // join with Class
+     }
+  } 
+  {
+     $lookup: {  
+        // join with Students
+     }
+  }
+]).pretty();

@@ -804,3 +804,86 @@ db.students.aggregate([
   }])
 
 2. Get Students who are studying under teacher 202
+
+
+Classes
+_id		class_name		class_code		teacher_id  	schedule 
+
+Teacher
+_id   first_name    last_name   subject_taught  class_taught 
+
+
+Students
+_id		first_name		last_name		class_id		teacher_id
+
+Ask Here :- Class 11B
+
+db.Class.insertMany([
+  { "_id": 101, "name": "12A", "room_no": 101, "section": "A", "teacher_no": 101 },
+  { "_id": 102, "name": "11B", "room_no": 102, "section": "B", "teacher_no": 102 },
+  { "_id": 103, "name": "10C", "room_no": 103, "section": "C", "teacher_no": 103 },
+  { "_id": 104, "name": "9D", "room_no": 104, "section": "D", "teacher_no": 104 },
+  { "_id": 105, "name": "8E", "room_no": 105, "section": "E", "teacher_no": 105 }
+])
+
+db.Students.insertMany([
+  { "_id": 1, "rollno": 101, "name": "John Smith", "class": "12A", "teacher_no": 101 },
+  { "_id": 2, "rollno": 102, "name": "Emily Johnson", "class": "11B", "teacher_no": 102 },
+  { "_id": 3, "rollno": 103, "name": "Michael Williams", "class": "10C", "teacher_no": 103 },
+  { "_id": 4, "rollno": 104, "name": "Sarah Brown", "class": "9D", "teacher_no": 104 },
+  { "_id": 5, "rollno": 105, "name": "Emma Garcia", "class": "8E", "teacher_no": 105 }
+])
+
+db.Teacher.insertMany([
+  { "_id": 101, "no": 101, "class_no": "12A", "subject": "Mathematics" },
+  { "_id": 102, "no": 102, "class_no": "11B", "subject": "Physics" },
+  { "_id": 103, "no": 103, "class_no": "10C", "subject": "English Literature" },
+  { "_id": 104, "no": 104, "class_no": "9D", "subject": "History" },
+  { "_id": 105, "no": 105, "class_no": "8E", "subject": "Biology" }
+])
+
+
+1. Finding Class 11B:
+db.Class.find({name='11B'})
+db.Class.aggregate([
+  {
+    $match: {
+      name: "11B"
+    }
+  }
+])
+
+2. Who's the Teacher?
+Class :- _id, name[PrimaryKey], room_no, section, teacher_no[foreignKey]
+Teacher :- _id, no[PrimaryKey], class_no, subject
+db.Class.aggregate([
+  {
+    $match: {
+      name: "11B"
+    }
+  },
+  {
+    $lookup:{
+      from:'Teacher',
+      localField:'teacher_no',
+      foreignField:'no',
+      as: 'teacher_raghavmj'
+    }
+  }
+]).pretty()
+
+
+db.Class.aggregate([
+   
+  {
+    $lookup:{
+      from:'Teacher',
+      localField:'teacher_no',
+      foreignField:'no',
+      as: 'teacher_raghavmj'
+    }
+  }
+]).pretty()
+
+
+3. Who Are the Students?

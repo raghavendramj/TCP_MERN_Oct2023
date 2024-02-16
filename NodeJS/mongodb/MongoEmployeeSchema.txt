@@ -182,7 +182,6 @@ db.Departments.find()
 db.Employees.find()
 db.Addresses.find()
 
-
 1. Get the average salary of employees in each department along with department names:
 2. Count the number of employees in each department:
 3. Find the highest salary among employees in each department:

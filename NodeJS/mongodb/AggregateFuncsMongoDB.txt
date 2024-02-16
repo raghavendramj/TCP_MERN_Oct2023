@@ -1,0 +1,73 @@
+Schema:
+Products: 
+{
+  "_id": ObjectId,
+  "name": String,
+  "category": String,
+  "price": Number,
+  "quantity": Number
+}
+Example Queries:
+Pipeline:
+ 
+db.products.aggregate([
+  { $match: { category: "Electronics" } },
+  { $group: { _id: "$category", avgPrice: { $avg: "$price" } } }
+])
+Stages:
+
+$match: 
+db.products.aggregate([
+  { $match: { category: "Clothing" } }
+])
+$group: 
+db.products.aggregate([
+  { $group: { _id: "$category", totalQuantity: { $sum: "$quantity" } } }
+])
+Operators:
+
+$sum: 
+db.products.aggregate([
+  { $group: { _id: "$category", totalQuantity: { $sum: "$quantity" } } }
+])
+
+$avg: 
+db.products.aggregate([
+  { $group: { _id: "$category", avgPrice: { $avg: "$price" } } }
+])
+
+Expressions:
+With $project: 
+db.products.aggregate([
+  { $project: { name: 1, totalValue: { $multiply: ["$price", "$quantity"] } } }
+])
+Aggregation Functions:
+
+$avg: 
+db.products.aggregate([
+  { $group: { _id: "$category", avgPrice: { $avg: "$price" } } }
+])
+Grouping: 
+db.products.aggregate([
+  { $group: { _id: "$category", count: { $sum: 1 } } }
+])
+
+Projecting: 
+db.products.aggregate([
+  { $project: { name: 1, price: 1, _id: 0 } }
+])
+
+Sorting: 
+db.products.aggregate([
+  { $sort: { price: -1 } }
+])
+
+Unwinding:
+Assuming there's an array field tags: 
+db.products.aggregate([
+  { $unwind: "$tags" }
+])
+
+Indexing:
+Creating an index on the category field for faster querying: 
+db.products.createIndex({ category: 1 })

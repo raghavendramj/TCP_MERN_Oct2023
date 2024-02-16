@@ -1,0 +1,194 @@
+db.Employees.insertMany([
+  {
+    "_id": ObjectId(),
+    "name": "John Doe",
+    "department": "Engineering",
+    "position": "Software Engineer",
+    "salary": 80000,
+    "join_date": "2023-01-15"
+  },
+  {
+    "_id": ObjectId(),
+    "name": "Jane Smith",
+    "department": "HR",
+    "position": "HR Manager",
+    "salary": 75000,
+    "join_date": "2022-11-20"
+  },
+  {
+    "_id": ObjectId(),
+    "name": "Alice Johnson",
+    "department": "Marketing",
+    "position": "Marketing Manager",
+    "salary": 70000,
+    "join_date": "2023-02-10"
+  },
+  {
+    "_id": ObjectId(),
+    "name": "Michael Brown",
+    "department": "Engineering",
+    "position": "Senior Software Engineer",
+    "salary": 90000,
+    "join_date": "2022-09-05"
+  },
+  {
+    "_id": ObjectId(),
+    "name": "Emily Williams",
+    "department": "HR",
+    "position": "HR Assistant",
+    "salary": 55000,
+    "join_date": "2023-03-01"
+  },
+  {
+    "_id": ObjectId(),
+    "name": "David Jones",
+    "department": "Marketing",
+    "position": "Marketing Assistant",
+    "salary": 60000,
+    "join_date": "2023-04-15"
+  },
+  {
+    "_id": ObjectId(),
+    "name": "Chris Lee",
+    "department": "Engineering",
+    "position": "Junior Software Engineer",
+    "salary": 65000,
+    "join_date": "2023-05-20"
+  },
+  {
+    "_id": ObjectId(),
+    "name": "Jessica Taylor",
+    "department": "HR",
+    "position": "HR Coordinator",
+    "salary": 60000,
+    "join_date": "2022-08-10"
+  },
+  {
+    "_id": ObjectId(),
+    "name": "Andrew Martinez",
+    "department": "Marketing",
+    "position": "Marketing Coordinator",
+    "salary": 68000,
+    "join_date": "2023-06-30"
+  },
+  {
+    "_id": ObjectId(),
+    "name": "Sophia Nguyen",
+    "department": "Engineering",
+    "position": "Software Developer",
+    "salary": 75000,
+    "join_date": "2023-07-25"
+  },
+  // Add more employee data here
+])
+
+
+
+db.Addresses.insertMany([
+  {
+    "_id": ObjectId(),
+    "city": "New York",
+    "street": "123 Main St",
+    "zip_code": "10001",
+    "country": "USA"
+  },
+  {
+    "_id": ObjectId(),
+    "city": "Los Angeles",
+    "street": "456 Oak Ave",
+    "zip_code": "90001",
+    "country": "USA"
+  },
+  {
+    "_id": ObjectId(),
+    "city": "Chicago",
+    "street": "789 Elm Blvd",
+    "zip_code": "60601",
+    "country": "USA"
+  },
+  {
+    "_id": ObjectId(),
+    "city": "Houston",
+    "street": "101 Pine St",
+    "zip_code": "77002",
+    "country": "USA"
+  },
+  {
+    "_id": ObjectId(),
+    "city": "San Francisco",
+    "street": "222 Maple Ave",
+    "zip_code": "94102",
+    "country": "USA"
+  },
+  {
+    "_id": ObjectId(),
+    "city": "Miami",
+    "street": "333 Cedar St",
+    "zip_code": "33101",
+    "country": "USA"
+  },
+  {
+    "_id": ObjectId(),
+    "city": "Seattle",
+    "street": "444 Birch Ave",
+    "zip_code": "98101",
+    "country": "USA"
+  },
+  {
+    "_id": ObjectId(),
+    "city": "Boston",
+    "street": "555 Oak St",
+    "zip_code": "02101",
+    "country": "USA"
+  },
+  {
+    "_id": ObjectId(),
+    "city": "Dallas",
+    "street": "666 Elm St",
+    "zip_code": "75201",
+    "country": "USA"
+  },
+  {
+    "_id": ObjectId(),
+    "city": "Atlanta",
+    "street": "777 Pine Ave",
+    "zip_code": "30301",
+    "country": "USA"
+  }
+])
+
+
+db.Departments.insertMany([
+  {
+    "_id": ObjectId(),
+    "name": "Engineering",
+    "description": "Responsible for software development and maintenance."
+  },
+  {
+    "_id": ObjectId(),
+    "name": "HR",
+    "description": "Handles recruitment, employee relations, and HR policies."
+  },
+  {
+    "_id": ObjectId(),
+    "name": "Marketing",
+    "description": "Responsible for marketing and promotional activities."
+  },
+  // Add more department data here
+])
+
+
+db.Departments.find()
+db.Employees.find()
+db.Addresses.find()
+
+
+1. Get the average salary of employees in each department along with department names:
+2. Count the number of employees in each department:
+3. Find the highest salary among employees in each department:
+4. Get the total salary expenditure for each department:
+5. Find the newest employee (based on join date) in each department:
+6. Retrieve employees in a specific department along with their addresses:
+7. Find all employees along with their addresses:
+8. Get all employees with their corresponding department information:
+

@@ -44,6 +44,25 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+//POST Method -> Save Student
+
+router.post("/", async (req, res) => {
+  try {
+    console.log("Request Body :- ", req.body);
+    if (Object.keys(req.body).length === 0) {
+      res.send("Unable to add student as we received empty body");
+      return;
+    }
+    const newStudent = new Student({
+      ...req.body,
+    });
+    const response = await newStudent.save();
+    res.send("Success :- " + response);
+  } catch (err) {
+    res.send("Something went wrong, contact your admin!!");
+  }
+});
+
 const port = process.env.POR || 8100;
 app.listen(port, () => {
   console.log(`Server started at ${port}`);

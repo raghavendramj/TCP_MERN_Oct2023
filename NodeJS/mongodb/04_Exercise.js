@@ -133,7 +133,7 @@ function deleteManyExample() {
 // deleteManyExample();
 
 function findByIdAndRemove() {
-  Student.findByIdAndRemove(2)
+  Student.findByIdAndRemove(4)
     .then((data) => console.log("Student deleted successfully", data))
     .catch((err) => console.error("Error deleting student:", err));
 }

@@ -63,6 +63,42 @@ router.post("/", async (req, res) => {
   }
 });
 
+//Delete Method
+router.delete("/:id", async (req, res) => {
+  console.log("Received the delete request!");
+  const studentId = req.params.id;
+
+  //Add Validation for id
+  const response = await Student.findByIdAndRemove(studentId);
+  res.send(response);
+});
+
+//Update Method
+router.put("/:id", async (req, res) => {
+  console.log("Received the Update request!");
+
+  try {
+    console.log("Request Body :- ", req.body);
+    if (Object.keys(req.body).length === 0) {
+      res.send("Unable to add student as we received empty body");
+      return;
+    }
+    const studentId = req.params.id;
+    const response = await Student.findByIdAndUpdate(
+      { _id: studentId },
+      {
+        $set: {
+          ...req.body,
+        },
+      },
+      { new: true } //Returns the modified data, without this you will get original data
+    );
+    res.send("Success, student got updated!" + response);
+  } catch (err) {
+    res.send("Something went wrong, contact your admin!!" + err);
+  }
+});
+
 const port = process.env.POR || 8100;
 app.listen(port, () => {
   console.log(`Server started at ${port}`);

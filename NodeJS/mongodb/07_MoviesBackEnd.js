@@ -59,10 +59,19 @@ router.post("/", async (req, res) => {
     }
 
     const maxIdMovie = await Movie.findOne().sort({ _id: -1 });
+    let nextCustomId = 1;
+    if (maxIdMovie) {
+      nextCustomId = maxIdMovie.customId + 1;
+      if (nextCustomId > 200) {
+        return res.status(400).json({ message: 'Maximum movie limit reached' });
+      }
+    }  
+ 
+ 
     console.log("maxIdMovie -> ", maxIdMovie);
     const newMovie = new Movie({
       ...req.body,
-      _id: maxIdMovie._id + 1,
+      _id: nextCustomId,
     });
     const response = await newMovie.save();
     res.send("Success :- " + response);

@@ -21,14 +21,14 @@ export const moviesReducer = (state = initialState, action) => {
       return {
         ...state,
         movies: state.movies.map((movie) =>
-          movie.id === action.payload.id ? action.payload : movie
+          movie._id === action.payload._id ? action.payload : movie
         ),
       };
       //This just updates the state!
     case DELETE_MOVIE:
       return {
         ...state,
-        movies: state.movies.filter((movie) => movie.id !== action.payload),
+        movies: state.movies.filter((movie) => movie._id !== action.payload),
       };
     default:
       return state;

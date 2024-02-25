@@ -26,7 +26,7 @@ function Movies({ movies, handleDelete }) {
                     <tbody>
                         {movies.map((movie, index) => {
                             return <Movie
-                                key={movie.id}
+                                key={movie._id}
                                 slNo={index + 1}
                                 movie={movie}
                                 handleDelete={handleDelete}

@@ -1,5 +1,5 @@
 export const CONSTANTS = {
-    backEndUrl: "http://localhost:8082/api/movies",
+    backEndUrl: "http://localhost:8100/movies",
     emptyMovieObj: { title: "", director: "", releaseYear: 0, genre: "", rating: 0, }
 
 }

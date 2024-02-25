@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const { Student } = require("./00_Models");
+const { Movie } = require("./00_Models");
 
 //Middleware -> to receive the input as JSON
 
@@ -14,50 +14,50 @@ function init() {
   connectionPromise
     .then(() => console.log("Connected to MongoDB"))
     .catch((err) => console.log("Could not connect to MongoDB...", err));
-  app.use("/students", router);
+  app.use("/movies", router);
 }
 
 init();
 
-//GET Method -> Students
+//GET Method -> Movies
 router.get("/", async (req, res) => {
   try {
-    const students = await Student.find({});
-    console.log("getStudentsAsync :: Students Fetched :- ", students);
-    // res.send(students);
-    res.json(students);
+    const movies = await Movie.find({});
+    console.log("getMoviesAsync :: Movies Fetched... ", movies.map(movie => movie.id));
+    // res.send(movies);
+    res.json(movies);
   } catch (err) {
     res.send("Something went wrong, contact your admin!!");
   }
 });
 
-//GET Method -> Student by ID
+//GET Method -> Movie by ID
 router.get("/:id", async (req, res) => {
-  const studentId = req.params.id;
-  console.log("Student Id :- ", studentId);
-  const findQueryEq = { _id: { $eq: studentId } };
+  const movieId = req.params.id;
+  console.log("Movie Id :- ", movieId);
+  const findQueryEq = { _id: { $eq: movieId } };
   try {
-    const studentById = await Student.find(findQueryEq);
-    console.log("Student by ID :- ", studentById);
-    res.json(studentById);
+    const movieById = await Movie.find(findQueryEq);
+    console.log("Movie by ID :- ", movieById);
+    res.json(movieById);
   } catch (err) {
     res.send("Something went wrong, contact your admin!!");
   }
 });
 
-//POST Method -> Save Student
+//POST Method -> Save Movie
 
 router.post("/", async (req, res) => {
   try {
     console.log("Request Body :- ", req.body);
     if (Object.keys(req.body).length === 0) {
-      res.send("Unable to add student as we received empty body");
+      res.send("Unable to add movie as we received empty body");
       return;
     }
-    const newStudent = new Student({
+    const newMovie = new Movie({
       ...req.body,
     });
-    const response = await newStudent.save();
+    const response = await newMovie.save();
     res.send("Success :- " + response);
   } catch (err) {
     res.send("Something went wrong, contact your admin!!");
@@ -67,26 +67,27 @@ router.post("/", async (req, res) => {
 //Delete Method
 router.delete("/:id", async (req, res) => {
   console.log("Received the delete request!");
-  const studentId = req.params.id;
+  const movieId = req.params.id;
 
   //Add Validation for id
-  const response = await Student.findByIdAndRemove(studentId);
+  const response = await Movie.findByIdAndRemove(movieId);
   res.send(response);
 });
 
 //Update Method
 router.put("/:id", async (req, res) => {
-  console.log("Received the Update request!");
+  const movieId = req.params.id;
 
+  console.log("Received the Update request! :- movieId", movieId);
+  console.log("req.body movieId", req.body);
   try {
     console.log("Request Body :- ", req.body);
     if (Object.keys(req.body).length === 0) {
-      res.send("Unable to add student as we received empty body");
+      res.send("Unable to add movie as we received empty body");
       return;
     }
-    const studentId = req.params.id;
-    const response = await Student.findByIdAndUpdate(
-      { _id: studentId },
+    const response = await Movie.findByIdAndUpdate(
+      { _id: movieId },
       {
         $set: {
           ...req.body,
@@ -94,7 +95,7 @@ router.put("/:id", async (req, res) => {
       },
       { new: true } //Returns the modified data, without this you will get original data
     );
-    res.send("Success, student got updated!" + response);
+    res.send("Success, movie got updated!" + response);
   } catch (err) {
     res.send("Something went wrong, contact your admin!!" + err);
   }

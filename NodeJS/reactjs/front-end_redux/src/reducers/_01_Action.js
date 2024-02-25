@@ -28,7 +28,9 @@ export const deleteMovie = (movieId) => ({
 
 export const getMovies = () => {
   return (dispatch) => {
+    console.log("About to dispatch :- getMovies");
     return axios.get(CONSTANTS.backEndUrl).then((response) => {
+      console.log("Axios Movies :- ", response);
       dispatch(fetchMovies(response.data));
     });
   };
@@ -48,6 +50,7 @@ export const updateMovieRequest = (id, udpatedMovie) => {
     return axios
       .put(`${CONSTANTS.backEndUrl}/${id}`, udpatedMovie)
       .then((response) => {
+        console.log("updateMovieRequest Response :- ", response);
         dispatch(updateMovie(response.data));
       });
   };

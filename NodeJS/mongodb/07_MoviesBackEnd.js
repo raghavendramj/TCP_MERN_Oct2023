@@ -23,7 +23,10 @@ init();
 router.get("/", async (req, res) => {
   try {
     const movies = await Movie.find({});
-    console.log("getMoviesAsync :: Movies Fetched... ", movies.map(movie => movie.id));
+    console.log(
+      "getMoviesAsync :: Movies Fetched... ",
+      movies.map((movie) => movie.id)
+    );
     // res.send(movies);
     res.json(movies);
   } catch (err) {
@@ -54,13 +57,17 @@ router.post("/", async (req, res) => {
       res.send("Unable to add movie as we received empty body");
       return;
     }
+
+    const maxIdMovie = await Movie.findOne().sort({ _id: -1 });
+    console.log("maxIdMovie -> ", maxIdMovie);
     const newMovie = new Movie({
       ...req.body,
+      _id: maxIdMovie._id + 1,
     });
     const response = await newMovie.save();
     res.send("Success :- " + response);
   } catch (err) {
-    res.send("Something went wrong, contact your admin!!");
+    res.send("Something went wrong, contact your admin!! - ", err);
   }
 });
 

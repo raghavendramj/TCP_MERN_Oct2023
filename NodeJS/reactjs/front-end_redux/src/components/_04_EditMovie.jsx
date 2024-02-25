@@ -15,7 +15,7 @@ function EditMovie({ movies }) {
         || !editedMovie.genre || !editedMovie.releaseYear || !editedMovie.rating;
 
     useEffect(() => {
-        const movieToEdit = movies.find((movie) => String(movie.id) === movieId);
+        const movieToEdit = movies.find((movie) => String(movie._id) === movieId);
         setEditedMovie(movieToEdit || {});
     }, [movieId, movies]);
 

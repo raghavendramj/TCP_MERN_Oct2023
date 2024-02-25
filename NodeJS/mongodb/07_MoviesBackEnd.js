@@ -13,7 +13,7 @@ function init() {
   const connectionPromise = mongoose.connect("mongodb://127.0.0.1/tcp");
   connectionPromise
     .then(() => console.log("Connected to MongoDB"))
-    .catch((err) => console.log("Could not connect to MongoDB..."+ err));
+    .catch((err) => console.log("Could not connect to MongoDB..." + err));
   app.use("/movies", router);
 }
 
@@ -63,19 +63,20 @@ router.post("/", async (req, res) => {
     if (maxIdMovie) {
       nextCustomId = maxIdMovie._id + 1;
       if (nextCustomId > 200) {
-        return res.status(400).json({ message: 'Maximum movie limit reached' });
+        return res.status(400).json({ message: "Maximum movie limit reached" });
       }
-    } 
- 
+    }
+
     console.log("maxIdMovie -> ", maxIdMovie);
     const newMovie = new Movie({
       ...req.body,
       _id: nextCustomId,
     });
     const response = await newMovie.save();
-    res.send("Success :- " + response);
+    // res.send("Success :- " + response);
+    res.send(response);
   } catch (err) {
-    res.send("Something went wrong, contact your admin!! - "+ err);
+    res.send("Something went wrong, contact your admin!! - " + err);
   }
 });
 
@@ -110,7 +111,8 @@ router.put("/:id", async (req, res) => {
       },
       { new: true } //Returns the modified data, without this you will get original data
     );
-    res.send("Success, movie got updated!" + response);
+    // res.send("Success, movie got updated!" + response);
+    res.send(response);
   } catch (err) {
     res.send("Something went wrong, contact your admin!!" + err);
   }
